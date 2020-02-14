@@ -13,10 +13,13 @@ import MapKit
 class MapViewController: UIViewController {
 
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var addressAnnotation: UIView!
+  
   fileprivate let locationManager: CLLocationManager = CLLocationManager()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    addressAnnotation.isHidden = true
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -49,8 +52,8 @@ extension MapViewController: CLLocationManagerDelegate {
   func drawLocationPin(at location: CLLocation) {
     let myAnnotation: MKPointAnnotation = MKPointAnnotation()
     myAnnotation.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-    myAnnotation.title = "Current location"
-    mapView.addAnnotation(myAnnotation)
+    self.mapView.addAnnotation(myAnnotation)
+  
   }
   
   //Prints an error message if localisation failed.
@@ -89,5 +92,27 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }))
     self.present(alert, animated: true, completion: nil)
+  }
+}
+
+// MARK: - MKMapViewDelegate
+
+extension MapViewController: MKMapViewDelegate {
+  
+  //Configures the annotation to display the blue marker and blue box above it and returns a MKAnnotationView or nil
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    let annotationIdentifier = "AnnotationIdentifier"
+    var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
+    if annotationView == nil {
+      annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+      guard let annotationView = annotationView else { return nil }
+      annotationView.image = UIImage(named: "marker.png")
+      addressAnnotation.isHidden = false
+      addressAnnotation.frame = CGRect(x: -(addressAnnotation.frame.width  / 2) + 13, y: -(addressAnnotation.frame.height) - 5, width: addressAnnotation.frame.width, height: addressAnnotation.frame.height) //I don't know why this has to be so weirdly hardcoded to be centered, probably some margins that intervene (?)
+      annotationView.addSubview(addressAnnotation)
+    } else {
+        annotationView?.annotation = annotation
+      }
+    return annotationView
   }
 }
