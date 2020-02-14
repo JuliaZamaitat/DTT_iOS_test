@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A327562923F6B4A900DB6C1C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A327562823F6B4A900DB6C1C /* MapViewController.swift */; };
 		A3D3873C23F58B8D00BA2088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3873B23F58B8D00BA2088 /* AppDelegate.swift */; };
 		A3D3873E23F58B8D00BA2088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3873D23F58B8D00BA2088 /* SceneDelegate.swift */; };
 		A3D3874323F58B8D00BA2088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D3874123F58B8D00BA2088 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A327562823F6B4A900DB6C1C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "RSR Pechhulp/Controller/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A3D3873823F58B8D00BA2088 /* RSR Pechhulp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSR Pechhulp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D3873B23F58B8D00BA2088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D3873D23F58B8D00BA2088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		A3D3875723F5DA5700BA2088 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A327562823F6B4A900DB6C1C /* MapViewController.swift */,
 				A3D3875B23F5DEB200BA2088 /* AboutPageViewController.swift */,
 				A3D3874F23F59BA100BA2088 /* MainMenuViewController.swift */,
 			);
@@ -185,6 +188,7 @@
 				A3D3873C23F58B8D00BA2088 /* AppDelegate.swift in Sources */,
 				A3D3875223F5C67F00BA2088 /* MainMenuView.swift in Sources */,
 				A3D3873E23F58B8D00BA2088 /* SceneDelegate.swift in Sources */,
+				A327562923F6B4A900DB6C1C /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
