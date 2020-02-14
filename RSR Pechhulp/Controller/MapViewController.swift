@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
 
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var addressAnnotation: UIView!
+  @IBOutlet weak var addressLabel: UILabel!
   
   fileprivate let locationManager: CLLocationManager = CLLocationManager()
   
@@ -42,10 +43,33 @@ extension MapViewController: CLLocationManagerDelegate {
   //Gets called after location was updated significantally and sets the map region to the current position.
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     let userLocation: CLLocation = locations[0] as CLLocation
+    updateAddressAnnotation(forLocation: userLocation)
     let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
     let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     mapView.setRegion(region, animated: true)
     drawLocationPin(at: userLocation)
+  }
+  
+  func updateAddressAnnotation(forLocation location: CLLocation) {
+    location.geocode { placemark, error in
+      if let error = error as? CLError {
+        print("CLError:", error)
+        return
+    } else if let placemark = placemark?.first {
+        var address = ""
+        DispatchQueue.main.async {
+          address += placemark.thoroughfare ?? "unknown"
+          address += " "
+          address += placemark.subThoroughfare ?? "unknown"
+          address += ",\n"
+          address += placemark.postalCode ?? "unknown"
+          address += ", "
+          address += placemark.locality ?? "unknown"
+         
+          self.addressLabel.text = address
+        }
+      }
+    }
   }
   
   //Draws the pin at the current location after it changed
@@ -93,6 +117,11 @@ extension MapViewController: CLLocationManagerDelegate {
     }))
     self.present(alert, animated: true, completion: nil)
   }
+  
+
+  
+  
+  
 }
 
 // MARK: - MKMapViewDelegate
@@ -114,5 +143,11 @@ extension MapViewController: MKMapViewDelegate {
         annotationView?.annotation = annotation
       }
     return annotationView
+  }
+}
+
+extension CLLocation {
+  func geocode(completion: @escaping (_ placemark: [CLPlacemark]?, _ error: Error?) -> Void)  {
+      CLGeocoder().reverseGeocodeLocation(self, completionHandler: completion)
   }
 }
