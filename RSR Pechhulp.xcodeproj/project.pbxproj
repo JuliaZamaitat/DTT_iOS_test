@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A327562923F6B4A900DB6C1C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A327562823F6B4A900DB6C1C /* MapViewController.swift */; };
+		A327562B23F71F7A00DB6C1C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A327562A23F71F7A00DB6C1C /* Reachability.swift */; };
 		A3D3873C23F58B8D00BA2088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3873B23F58B8D00BA2088 /* AppDelegate.swift */; };
 		A3D3873E23F58B8D00BA2088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3873D23F58B8D00BA2088 /* SceneDelegate.swift */; };
 		A3D3874323F58B8D00BA2088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D3874123F58B8D00BA2088 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		A327562823F6B4A900DB6C1C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "RSR Pechhulp/Controller/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
+		A327562A23F71F7A00DB6C1C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A3D3873823F58B8D00BA2088 /* RSR Pechhulp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSR Pechhulp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D3873B23F58B8D00BA2088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D3873D23F58B8D00BA2088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,8 @@
 		A3D3875823F5DA8E00BA2088 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A3D3874623F58B8F00BA2088 /* LaunchScreen.storyboard */,
+				A3D3874123F58B8D00BA2088 /* Main.storyboard */,
 				A3D3875D23F5F97400BA2088 /* AboutPage.swift */,
 				A3D3875123F5C67E00BA2088 /* MainMenuView.swift */,
 			);
@@ -103,10 +107,9 @@
 		A3D3875A23F5DB5D00BA2088 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				A327562A23F71F7A00DB6C1C /* Reachability.swift */,
 				A3D3873B23F58B8D00BA2088 /* AppDelegate.swift */,
-				A3D3874623F58B8F00BA2088 /* LaunchScreen.storyboard */,
 				A3D3873D23F58B8D00BA2088 /* SceneDelegate.swift */,
-				A3D3874123F58B8D00BA2088 /* Main.storyboard */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				A3D3873C23F58B8D00BA2088 /* AppDelegate.swift in Sources */,
 				A3D3875223F5C67F00BA2088 /* MainMenuView.swift in Sources */,
 				A3D3873E23F58B8D00BA2088 /* SceneDelegate.swift in Sources */,
+				A327562B23F71F7A00DB6C1C /* Reachability.swift in Sources */,
 				A327562923F6B4A900DB6C1C /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

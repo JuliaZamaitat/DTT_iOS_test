@@ -26,8 +26,33 @@ class MapViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     setupLocationManager()
+    checkInternetAccess()
   }
-}
+  
+  // MARK: - Connectivity
+  
+  func checkInternetAccess() {
+    if !Reachability.getInstance().isConnectedToNetwork() {
+      showAlert(title: "No Connection", message: "You are not connected to the internet. Please turn on your WiFi or mobile services.")
+    }
+  }
+   
+    
+  // MARK: - HelperMethods
+  
+  func showAlert(title: String, message: String, actions: [UIAlertAction] = []) {
+    let alert = UIAlertController(title:title, message: message, preferredStyle: .alert)
+    if !actions.isEmpty {
+      for action in actions {
+        alert.addAction(action)
+      }
+    } else {
+      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    }
+    self.present(alert, animated: true, completion: nil)
+    }
+  }
+
 
 // MARK: - CLLocationManagerDelegate
 
@@ -50,34 +75,11 @@ extension MapViewController: CLLocationManagerDelegate {
     drawLocationPin(at: userLocation)
   }
   
-  func updateAddressAnnotation(forLocation location: CLLocation) {
-    location.geocode { placemark, error in
-      if let error = error as? CLError {
-        print("CLError:", error)
-        return
-    } else if let placemark = placemark?.first {
-        var address = ""
-        DispatchQueue.main.async {
-          address += placemark.thoroughfare ?? "unknown"
-          address += " "
-          address += placemark.subThoroughfare ?? "unknown"
-          address += ",\n"
-          address += placemark.postalCode ?? "unknown"
-          address += ", "
-          address += placemark.locality ?? "unknown"
-         
-          self.addressLabel.text = address
-        }
-      }
-    }
-  }
-  
   //Draws the pin at the current location after it changed
   func drawLocationPin(at location: CLLocation) {
     let myAnnotation: MKPointAnnotation = MKPointAnnotation()
     myAnnotation.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
     self.mapView.addAnnotation(myAnnotation)
-  
   }
   
   //Prints an error message if localisation failed.
@@ -97,32 +99,45 @@ extension MapViewController: CLLocationManagerDelegate {
         case .notDetermined:
          locationManager.requestWhenInUseAuthorization()
         case .denied, .restricted:
-          showAlert()
+          let action = UIAlertAction(title: "Go to Settings now", style: .default, handler: { ( alert: UIAlertAction) in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+              if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl)
+              }
+          })
+          showAlert(title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [action])
         case .authorizedAlways, .authorizedWhenInUse:
           locationManager.startMonitoringSignificantLocationChanges()
         default:
           break
       }
+    } else {
+      showAlert(title: "GPS disabled on Device", message: "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.")
     }
   }
   
-  //Shows an alert that GPS is turned off and takes the user to the settings.
-  func showAlert(){
-    let alert = UIAlertController(title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "Go to Settings now", style: .default, handler: { ( alert: UIAlertAction) in
-      guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
-        if UIApplication.shared.canOpenURL(settingsUrl) {
-          UIApplication.shared.open(settingsUrl)
+  //Updates the label for the address by calling the geocode method of CLLocation
+  func updateAddressAnnotation(forLocation location: CLLocation) {
+    location.geocode { placemark, error in
+      if let error = error as? CLError {
+        print("CLError:", error)
+    } else if let placemark = placemark?.first {
+        DispatchQueue.main.async {
+          if let street = placemark.thoroughfare,
+            let number = placemark.subThoroughfare,
+            let zip = placemark.postalCode,
+            let city = placemark.locality {
+              self.addressLabel.text = """
+                \(street) \(number),
+              \(zip), \(city)
+              """
+          }
         }
-    }))
-    self.present(alert, animated: true, completion: nil)
+      }
+    }
   }
-  
-
-  
-  
-  
 }
+
 
 // MARK: - MKMapViewDelegate
 
@@ -145,6 +160,8 @@ extension MapViewController: MKMapViewDelegate {
     return annotationView
   }
 }
+
+// MARK: - CLLocation
 
 extension CLLocation {
   func geocode(completion: @escaping (_ placemark: [CLPlacemark]?, _ error: Error?) -> Void)  {
