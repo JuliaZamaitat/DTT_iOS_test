@@ -30,6 +30,7 @@ class MapViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    addressAnnotation.isHidden = false
     setupLocationManager()
     checkInternetAccess()
     
@@ -42,9 +43,18 @@ class MapViewController: UIViewController {
       showAlert(title: "No Connection", message: "You are not connected to the internet. Please turn on your WiFi or mobile services.")
     }
   }
-   
+  
   @IBAction func firstCallButtonPressed(_ sender: Any) {
      hideOrShowAddressAndCallButton()
+  }
+  @IBAction func secondCallButtonPressed(_ sender: Any) {
+    makePhoneCall(withPhoneNumber: "09003344556")
+  }
+  
+  func makePhoneCall(withPhoneNumber number: String) {
+    if let phoneURL = NSURL(string: ("tel://" + number)) {
+      UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+    }
   }
   
   @IBAction func cancelButtonPressed(_ sender: Any) {

@@ -343,6 +343,9 @@
                                         <state key="normal" title="Bel  nu" image="ic_phone" backgroundImage="btn_bel_normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="secondCallButtonPressed:" destination="aLV-OB-Ue0" eventType="touchUpInside" id="BwO-8r-zSs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8g-ab-wsO">
                                         <rect key="frame" x="18" y="-2" width="70" height="30"/>
