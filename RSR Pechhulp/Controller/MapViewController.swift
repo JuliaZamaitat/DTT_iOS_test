@@ -15,18 +15,24 @@ class MapViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var addressAnnotation: UIView!
   @IBOutlet weak var addressLabel: UILabel!
+  @IBOutlet weak var callNowView: UIView!
+  @IBOutlet weak var firstCallButton: UIButton!
+  @IBOutlet weak var cancelButton: UIButton!
+  
   
   fileprivate let locationManager: CLLocationManager = CLLocationManager()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     addressAnnotation.isHidden = true
+    callNowView.isHidden = true
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     setupLocationManager()
     checkInternetAccess()
+    
   }
   
   // MARK: - Connectivity
@@ -37,7 +43,20 @@ class MapViewController: UIViewController {
     }
   }
    
-    
+  @IBAction func firstCallButtonPressed(_ sender: Any) {
+     hideOrShowAddressAndCallButton()
+  }
+  
+  @IBAction func cancelButtonPressed(_ sender: Any) {
+    hideOrShowAddressAndCallButton()
+  }
+  
+  func hideOrShowAddressAndCallButton() {
+    callNowView.isHidden = !callNowView.isHidden
+    addressAnnotation.isHidden = !addressAnnotation.isHidden
+    firstCallButton.isHidden = !firstCallButton.isHidden
+  }
+  
   // MARK: - HelperMethods
   
   func showAlert(title: String, message: String, actions: [UIAlertAction] = []) {

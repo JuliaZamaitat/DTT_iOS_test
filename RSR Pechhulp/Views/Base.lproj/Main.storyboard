@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1e8-l9-dQG">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tXn-tc-nVg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MainMenuView" customModule="RSR_Pechhulp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_background-i5" translatesAutoresizingMaskIntoConstraints="NO" id="kft-Ov-BkR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="430"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="jYn-PZ-gTM">
                                 <rect key="frame" x="236" y="881" width="362" height="171"/>
@@ -49,7 +49,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28K-di-hiA">
-                                <rect key="frame" x="20" y="658" width="374" height="48"/>
+                                <rect key="frame" x="16" y="402" width="288" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <inset key="imageEdgeInsets" minX="-26" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="RSR Pechhulp" image="ic_attention" backgroundImage="btn_bel_normal">
@@ -140,17 +140,17 @@
                         <viewControllerLayoutGuide type="bottom" id="cq9-1g-3Dh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="f7g-zd-hZe" customClass="AboutPage" customModule="RSR_Pechhulp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mbu-dg-fGD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="224"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="224"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="over_image" translatesAutoresizingMaskIntoConstraints="NO" id="uR0-ci-q9F">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" insetsLayoutMarginsFromSafeArea="NO" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="FDw-s1-7NF">
-                                        <rect key="frame" x="0.0" y="216" width="414" height="8"/>
+                                        <rect key="frame" x="0.0" y="216" width="320" height="8"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -161,7 +161,7 @@
                                 <rect key="frame" x="267" y="930" width="301" height="148"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qi9-vb-lZd">
-                                <rect key="frame" x="20" y="278" width="374" height="448"/>
+                                <rect key="frame" x="20" y="284" width="280" height="186"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Met de hulp van RSR blijft u mobiel. RSR is dé leverancier van hulpmiddelen in de regio Noordoost-Nederland. Gedegen kennis en jarenlange ervaring zit in ons DNA verweven en leidt tot het beste advies.\n
       Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bezoek onze showrooms in Silvolde en Nieuwleusen. We zijn iedere werkdag geopend van 8.00 tot 17.00 uur. Hier kunt u diverse hulpmiddelen uitproberen en rustig bekijken wat goed bij uw situatie aansluit. Samen met u zoeken we naar hulpmiddelen dat bij u past. RSR maakt mensen mobiel.</string>
@@ -295,17 +295,90 @@
                         <viewControllerLayoutGuide type="bottom" id="Ao5-Sh-RA5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YND-Ak-Cup">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="del-2Q-4Lb">
-                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <connections>
                                     <outlet property="delegate" destination="aLV-OB-Ue0" id="VG0-Y4-xI2"/>
                                 </connections>
                             </mapView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQc-Gw-sz1">
-                                <rect key="frame" x="58" y="108" width="205" height="143"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2Z-0F-o7K">
+                                <rect key="frame" x="16" y="402" width="288" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <inset key="imageEdgeInsets" minX="-26" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Bel RSR nu" image="ic_phone" backgroundImage="btn_bel_normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="firstCallButtonPressed:" destination="aLV-OB-Ue0" eventType="touchUpInside" id="jZ0-30-XAc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RA9-fp-0Cs" userLabel="Call Now View">
+                                <rect key="frame" x="16" y="135" width="288" height="210"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_back" translatesAutoresizingMaskIntoConstraints="NO" id="Jd1-lL-DAx">
+                                        <rect key="frame" x="0.0" y="26" width="288" height="184"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="annuleren_normal" translatesAutoresizingMaskIntoConstraints="NO" id="QbI-xj-rA4">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="26"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belkosten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTA-A4-eEa">
+                                        <rect key="frame" x="20" y="36" width="248" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voor dit nummer betallt u uw gebruikelijke belkosten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMF-VD-0LH">
+                                        <rect key="frame" x="20" y="72" width="248" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaN-hP-jfT">
+                                        <rect key="frame" x="55" y="142" width="178" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <inset key="imageEdgeInsets" minX="-26" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Bel  nu" image="ic_phone" backgroundImage="btn_bel_normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8g-ab-wsO">
+                                        <rect key="frame" x="18" y="-2" width="70" height="30"/>
+                                        <state key="normal" title="Annuleren">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="aLV-OB-Ue0" eventType="touchUpInside" id="Jow-mW-0yG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="EMF-VD-0LH" firstAttribute="top" secondItem="TTA-A4-eEa" secondAttribute="bottom" constant="15" id="E70-Yp-rKc"/>
+                                    <constraint firstItem="Jd1-lL-DAx" firstAttribute="top" secondItem="QbI-xj-rA4" secondAttribute="bottom" id="Ssd-KJ-Pxu"/>
+                                    <constraint firstItem="Jd1-lL-DAx" firstAttribute="leading" secondItem="RA9-fp-0Cs" secondAttribute="leading" id="UMr-06-k2G"/>
+                                    <constraint firstAttribute="trailing" secondItem="EMF-VD-0LH" secondAttribute="trailing" constant="20" id="Xji-e6-gDp"/>
+                                    <constraint firstAttribute="trailing" secondItem="UaN-hP-jfT" secondAttribute="trailing" constant="55" id="ZYZ-gy-b9b"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jd1-lL-DAx" secondAttribute="bottom" id="a0F-LM-4vR"/>
+                                    <constraint firstAttribute="bottom" secondItem="UaN-hP-jfT" secondAttribute="bottom" constant="20" id="a8h-Dj-0ch"/>
+                                    <constraint firstItem="TTA-A4-eEa" firstAttribute="leading" secondItem="RA9-fp-0Cs" secondAttribute="leading" constant="20" id="bL8-3f-zwF"/>
+                                    <constraint firstItem="EMF-VD-0LH" firstAttribute="leading" secondItem="RA9-fp-0Cs" secondAttribute="leading" constant="20" id="biv-o2-y7f"/>
+                                    <constraint firstItem="QbI-xj-rA4" firstAttribute="top" secondItem="RA9-fp-0Cs" secondAttribute="top" id="fSy-8c-OWR"/>
+                                    <constraint firstItem="TTA-A4-eEa" firstAttribute="top" secondItem="QbI-xj-rA4" secondAttribute="bottom" constant="10" id="gIe-y6-DYN"/>
+                                    <constraint firstItem="T8g-ab-wsO" firstAttribute="centerX" secondItem="QbI-xj-rA4" secondAttribute="centerX" id="mM6-zZ-ItU"/>
+                                    <constraint firstItem="UaN-hP-jfT" firstAttribute="leading" secondItem="RA9-fp-0Cs" secondAttribute="leading" constant="55" id="pGA-kg-syl"/>
+                                    <constraint firstItem="T8g-ab-wsO" firstAttribute="height" secondItem="QbI-xj-rA4" secondAttribute="height" multiplier="1.15385" id="pX9-hz-NSJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jd1-lL-DAx" secondAttribute="trailing" id="s88-Kh-frX"/>
+                                    <constraint firstItem="T8g-ab-wsO" firstAttribute="centerY" secondItem="QbI-xj-rA4" secondAttribute="centerY" id="sEj-G3-tzX"/>
+                                    <constraint firstItem="T8g-ab-wsO" firstAttribute="width" secondItem="QbI-xj-rA4" secondAttribute="width" multiplier="0.660377" id="sFZ-ej-YC5"/>
+                                    <constraint firstAttribute="trailing" secondItem="TTA-A4-eEa" secondAttribute="trailing" constant="20" id="z6c-dd-1fh"/>
+                                    <constraint firstItem="QbI-xj-rA4" firstAttribute="leading" secondItem="RA9-fp-0Cs" secondAttribute="leading" id="zq1-Vq-C1o"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQc-Gw-sz1" userLabel="Address Annotation View">
+                                <rect key="frame" x="110" y="52" width="205" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="address_back" translatesAutoresizingMaskIntoConstraints="NO" id="pny-WK-HWR">
@@ -341,8 +414,15 @@
                         <constraints>
                             <constraint firstItem="Ao5-Sh-RA5" firstAttribute="top" secondItem="del-2Q-4Lb" secondAttribute="bottom" id="9zB-Sh-B3f"/>
                             <constraint firstItem="del-2Q-4Lb" firstAttribute="top" secondItem="byA-Iu-iYg" secondAttribute="bottom" id="F99-zL-6s0"/>
+                            <constraint firstItem="r2Z-0F-o7K" firstAttribute="trailing" secondItem="YND-Ak-Cup" secondAttribute="trailingMargin" id="Hz8-eE-tXl"/>
+                            <constraint firstItem="r2Z-0F-o7K" firstAttribute="leading" secondItem="YND-Ak-Cup" secondAttribute="leadingMargin" id="ICW-bn-pST"/>
+                            <constraint firstItem="RA9-fp-0Cs" firstAttribute="centerY" secondItem="YND-Ak-Cup" secondAttribute="centerY" id="JiI-PG-YiF"/>
                             <constraint firstItem="del-2Q-4Lb" firstAttribute="leading" secondItem="YND-Ak-Cup" secondAttribute="leading" id="OXV-V6-BuE"/>
+                            <constraint firstItem="RA9-fp-0Cs" firstAttribute="leading" secondItem="YND-Ak-Cup" secondAttribute="leadingMargin" id="S2F-68-iNe"/>
                             <constraint firstAttribute="trailing" secondItem="del-2Q-4Lb" secondAttribute="trailing" id="TR3-Vt-wxb"/>
+                            <constraint firstItem="Ao5-Sh-RA5" firstAttribute="top" secondItem="r2Z-0F-o7K" secondAttribute="bottom" constant="30" id="c8k-N8-eyO"/>
+                            <constraint firstItem="RA9-fp-0Cs" firstAttribute="centerX" secondItem="YND-Ak-Cup" secondAttribute="centerX" id="ccD-vr-jmf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RA9-fp-0Cs" secondAttribute="trailing" id="jeV-Aj-Uu8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="RSR Pechhulp" id="8pO-rA-Qwm">
@@ -355,13 +435,16 @@
                     <connections>
                         <outlet property="addressAnnotation" destination="oQc-Gw-sz1" id="szv-TT-V1h"/>
                         <outlet property="addressLabel" destination="eQf-ud-egS" id="o3X-Lf-LQN"/>
+                        <outlet property="callNowView" destination="RA9-fp-0Cs" id="YSO-2Z-cRI"/>
+                        <outlet property="cancelButton" destination="T8g-ab-wsO" id="NaZ-g4-xvV"/>
+                        <outlet property="firstCallButton" destination="r2Z-0F-o7K" id="RbY-Nb-dt9"/>
                         <outlet property="mapView" destination="del-2Q-4Lb" id="KDj-0e-epw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEG-tB-ZHe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="cpd-zc-xx8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1567.5" y="433.75"/>
+            <point key="canvasLocation" x="1565.625" y="432.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sYc-dH-K3G">
@@ -369,7 +452,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1e8-l9-dQG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z69-Mq-pak">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -384,15 +467,18 @@
     </scenes>
     <resources>
         <image name="address_back" width="204" height="172"/>
+        <image name="annuleren_normal" width="106" height="26"/>
         <image name="btn_bel_normal" width="216" height="48"/>
         <image name="btn_normal" width="286" height="54"/>
         <image name="ic_attention" width="42" height="36"/>
         <image name="ic_attention_ipad" width="42" height="36"/>
         <image name="ic_over_ipad" width="30" height="30"/>
         <image name="ic_over_normal" width="30" height="30"/>
+        <image name="ic_phone" width="32" height="36"/>
         <image name="img_background-i5" width="320" height="504"/>
         <image name="line" width="320" height="8"/>
         <image name="over_image" width="320" height="216"/>
+        <image name="popup_back" width="284" height="184"/>
         <image name="small_logo_ipad" width="176" height="148"/>
         <image name="terug_normal" width="54" height="22"/>
     </resources>
