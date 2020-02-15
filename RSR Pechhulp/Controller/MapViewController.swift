@@ -19,7 +19,6 @@ class MapViewController: UIViewController {
   @IBOutlet weak var firstCallButton: UIButton!
   @IBOutlet weak var cancelButton: UIButton!
   
-  
   fileprivate let locationManager: CLLocationManager = CLLocationManager()
   
   override func viewDidLoad() {
@@ -32,16 +31,16 @@ class MapViewController: UIViewController {
     super.viewDidAppear(animated)
     setupLocationManager()
     checkInternetAccess()
-    
   }
   
   // MARK: - Connectivity
   
   func checkInternetAccess() {
     if !Reachability.getInstance().isConnectedToNetwork() {
-      showAlert(title: "No Connection", message: "You are not connected to the internet. Please turn on your WiFi or mobile services.")
+      Helper.showAlert(from: self, title: "No Connection", message: "You are not connected to the internet. Please turn on your WiFi or mobile services.")
     }
   }
+  
   
   // MARK: - Phone Call
   
@@ -64,32 +63,11 @@ class MapViewController: UIViewController {
   }
   
   func hideOrShowAddressAndCallButton() {
-    setView(callNowView, hidden: !callNowView.isHidden)
-    setView(addressAnnotation, hidden: !addressAnnotation.isHidden)
-    setView(firstCallButton, hidden: !firstCallButton.isHidden)
+    Helper.setView(callNowView, hidden: !callNowView.isHidden)
+    Helper.setView(addressAnnotation, hidden: !addressAnnotation.isHidden)
+    Helper.setView(firstCallButton, hidden: !firstCallButton.isHidden)
   }
-  
-  // MARK: - HelperMethods
-  
-  func showAlert(title: String, message: String, actions: [UIAlertAction] = []) {
-    let alert = UIAlertController(title:title, message: message, preferredStyle: .alert)
-    if !actions.isEmpty {
-      for action in actions {
-        alert.addAction(action)
-      }
-    } else {
-      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-    }
-    self.present(alert, animated: true, completion: nil)
-    }
-  }
-
-  func setView(_ view: UIView, hidden: Bool) {
-    UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
-        view.isHidden = hidden
-    })
-  }
-
+}
 
 // MARK: - CLLocationManagerDelegate
 
@@ -143,14 +121,14 @@ extension MapViewController: CLLocationManagerDelegate {
                 UIApplication.shared.open(settingsUrl)
               }
           })
-          showAlert(title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [action])
+          Helper.showAlert(from: self, title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [action])
         case .authorizedAlways, .authorizedWhenInUse:
           locationManager.startMonitoringSignificantLocationChanges()
         default:
           break
       }
     } else {
-      showAlert(title: "GPS disabled on Device", message: "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.")
+      Helper.showAlert(from: self, title: "GPS disabled on Device", message: "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.")
     }
   }
   
