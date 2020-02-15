@@ -297,37 +297,38 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2Z-0F-o7K">
                                 <rect key="frame" x="20" y="658" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <inset key="imageEdgeInsets" minX="-26" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-100" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Bel RSR nu" image="ic_phone" backgroundImage="btn_bel_normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
                                 <connections>
                                     <action selector="firstCallButtonPressed:" destination="aLV-OB-Ue0" eventType="touchUpInside" id="jZ0-30-XAc"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RA9-fp-0Cs" userLabel="Call Now View">
-                                <rect key="frame" x="20" y="207" width="374" height="322"/>
+                                <rect key="frame" x="20" y="239.33333333333334" width="374" height="257.33333333333326"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup_back" translatesAutoresizingMaskIntoConstraints="NO" id="Jd1-lL-DAx">
-                                        <rect key="frame" x="0.0" y="40" width="374" height="282"/>
+                                        <rect key="frame" x="0.0" y="31.666666666666671" width="374" height="225.66666666666663"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="annuleren_normal" translatesAutoresizingMaskIntoConstraints="NO" id="QbI-xj-rA4">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="31.666666666666668"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Belkosten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTA-A4-eEa">
-                                        <rect key="frame" x="20" y="55" width="334" height="23"/>
+                                        <rect key="frame" x="20" y="56.666666666666657" width="334" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voor dit nummer betallt u uw gebruikelijke belkosten" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMF-VD-0LH">
-                                        <rect key="frame" x="20" y="140.66666666666669" width="334" height="40.666666666666657"/>
+                                        <rect key="frame" x="-3.6666666666666572" y="108.33333333333336" width="381.33333333333326" height="40.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaN-hP-jfT">
-                                        <rect key="frame" x="71.333333333333329" y="254" width="231.33333333333337" height="48"/>
+                                        <rect key="frame" x="37.333333333333343" y="189.33333333333334" width="299.33333333333326" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <inset key="imageEdgeInsets" minX="-26" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Bel  nu" image="ic_call" backgroundImage="btn_bel_normal">
@@ -338,7 +339,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8g-ab-wsO">
-                                        <rect key="frame" x="18" y="-3" width="70" height="46"/>
+                                        <rect key="frame" x="18" y="-2.6666666666666856" width="70" height="37"/>
                                         <state key="normal" title="Annuleren">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -349,19 +350,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="EMF-VD-0LH" firstAttribute="leading" secondItem="RA9-fp-0Cs" secondAttribute="leading" constant="20" id="7ie-Dc-7Bs"/>
                                     <constraint firstItem="Jd1-lL-DAx" firstAttribute="height" secondItem="RA9-fp-0Cs" secondAttribute="height" multiplier="0.87619" id="9k8-qX-Lu2"/>
+                                    <constraint firstItem="EMF-VD-0LH" firstAttribute="width" secondItem="UaN-hP-jfT" secondAttribute="width" multiplier="1.27481" id="JU3-a1-dkX"/>
                                     <constraint firstItem="UaN-hP-jfT" firstAttribute="centerX" secondItem="RA9-fp-0Cs" secondAttribute="centerX" id="Njy-we-byz"/>
                                     <constraint firstItem="EMF-VD-0LH" firstAttribute="centerY" secondItem="RA9-fp-0Cs" secondAttribute="centerY" id="PYi-d2-W1A"/>
                                     <constraint firstItem="Jd1-lL-DAx" firstAttribute="top" secondItem="QbI-xj-rA4" secondAttribute="bottom" id="Ssd-KJ-Pxu"/>
                                     <constraint firstItem="Jd1-lL-DAx" firstAttribute="leading" secondItem="RA9-fp-0Cs" secondAttribute="leading" id="UMr-06-k2G"/>
-                                    <constraint firstAttribute="trailing" secondItem="EMF-VD-0LH" secondAttribute="trailing" constant="20" id="XKg-RD-h7c"/>
+                                    <constraint firstItem="EMF-VD-0LH" firstAttribute="centerX" secondItem="RA9-fp-0Cs" secondAttribute="centerX" id="VNH-Ao-dqi"/>
                                     <constraint firstAttribute="bottom" secondItem="Jd1-lL-DAx" secondAttribute="bottom" id="a0F-LM-4vR"/>
                                     <constraint firstAttribute="bottom" secondItem="UaN-hP-jfT" secondAttribute="bottom" constant="20" id="a8h-Dj-0ch"/>
                                     <constraint firstItem="TTA-A4-eEa" firstAttribute="leading" secondItem="RA9-fp-0Cs" secondAttribute="leading" constant="20" id="bL8-3f-zwF"/>
-                                    <constraint firstItem="UaN-hP-jfT" firstAttribute="width" secondItem="RA9-fp-0Cs" secondAttribute="width" multiplier="0.618056" id="cyF-GC-9aL"/>
+                                    <constraint firstItem="UaN-hP-jfT" firstAttribute="width" secondItem="RA9-fp-0Cs" secondAttribute="width" multiplier="0.8" id="cyF-GC-9aL"/>
                                     <constraint firstItem="QbI-xj-rA4" firstAttribute="top" secondItem="RA9-fp-0Cs" secondAttribute="top" id="fSy-8c-OWR"/>
-                                    <constraint firstItem="TTA-A4-eEa" firstAttribute="top" secondItem="QbI-xj-rA4" secondAttribute="bottom" constant="15" id="gIe-y6-DYN"/>
+                                    <constraint firstItem="TTA-A4-eEa" firstAttribute="top" secondItem="QbI-xj-rA4" secondAttribute="bottom" constant="25" id="gIe-y6-DYN"/>
                                     <constraint firstItem="T8g-ab-wsO" firstAttribute="centerX" secondItem="QbI-xj-rA4" secondAttribute="centerX" id="mM6-zZ-ItU"/>
                                     <constraint firstItem="T8g-ab-wsO" firstAttribute="height" secondItem="QbI-xj-rA4" secondAttribute="height" multiplier="1.15385" id="pX9-hz-NSJ"/>
                                     <constraint firstAttribute="trailing" secondItem="Jd1-lL-DAx" secondAttribute="trailing" id="s88-Kh-frX"/>
@@ -472,7 +473,7 @@
                             <constraint firstItem="RA9-fp-0Cs" firstAttribute="leading" secondItem="YND-Ak-Cup" secondAttribute="leadingMargin" id="S2F-68-iNe"/>
                             <constraint firstAttribute="trailing" secondItem="del-2Q-4Lb" secondAttribute="trailing" id="TR3-Vt-wxb"/>
                             <constraint firstItem="4n3-j8-nyC" firstAttribute="leading" secondItem="YND-Ak-Cup" secondAttribute="leadingMargin" id="Uzz-eu-Faf"/>
-                            <constraint firstItem="RA9-fp-0Cs" firstAttribute="height" secondItem="YND-Ak-Cup" secondAttribute="height" multiplier="0.4375" id="bGE-ru-sey"/>
+                            <constraint firstItem="RA9-fp-0Cs" firstAttribute="height" secondItem="YND-Ak-Cup" secondAttribute="height" multiplier="0.35" id="bGE-ru-sey"/>
                             <constraint firstItem="Ao5-Sh-RA5" firstAttribute="top" secondItem="r2Z-0F-o7K" secondAttribute="bottom" constant="30" id="c8k-N8-eyO"/>
                             <constraint firstItem="RA9-fp-0Cs" firstAttribute="centerX" secondItem="YND-Ak-Cup" secondAttribute="centerX" id="ccD-vr-jmf"/>
                             <constraint firstItem="uzw-5Q-EOV" firstAttribute="centerX" secondItem="YND-Ak-Cup" secondAttribute="centerX" id="gkP-3O-aLg"/>
