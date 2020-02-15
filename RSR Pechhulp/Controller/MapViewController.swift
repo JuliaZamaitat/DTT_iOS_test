@@ -38,7 +38,7 @@ class MapViewController: UIViewController {
   
 extension MapViewController: PhoneCall {
   
-  // Triggers confirmation view for call
+  // Triggers confirmation view for call and hides annotation view
   @IBAction func firstCallButtonPressed(_ sender: Any) {
     hideOrShowAddressAndCallButton()
   }
@@ -49,19 +49,19 @@ extension MapViewController: PhoneCall {
     hideOrShowAddressAndCallButton()
   }
 
-  // Hides confirmation view for call
+  // Hides confirmation view for call and presents annotation view
   @IBAction func cancelButtonPressed(_ sender: Any) {
     hideOrShowAddressAndCallButton()
   }
   
-  // Makes call views (in)visible depending on how the previous state was
+  // Makes the call box, button and address annotation (in)visible depending on how the previous state was
   func hideOrShowAddressAndCallButton() {
     Helper.setView(callNowView, hidden: !callNowView.isHidden)
     Helper.setView(addressAnnotation, hidden: !addressAnnotation.isHidden)
     Helper.setView(firstCallButton, hidden: !firstCallButton.isHidden)
   }
    
-  // Makes the phone show the link to call with the specified number
+  // Makes the device show the link to call with the specified number
   func makePhoneCall(withPhoneNumber number: String) {
     if let phoneURL = NSURL(string: ("tel://" + number)) {
       UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
@@ -77,7 +77,7 @@ extension MapViewController: Connectivity {
     Reachability.getInstance()
   }
   
-  // Checks for internet conenction and alerts when not connected.
+  // Checks for internet connenction and alerts when not connected.
   func checkInternetAccess() {
     if !reachability.isConnectedToNetwork() {
       Helper.showAlert(from: self, title: "No Connection", message: "You are not connected to the internet. Please turn on your WiFi or mobile services.")
@@ -119,7 +119,7 @@ extension MapViewController: CLLocationManagerDelegate {
      print("Error \(error)")
   }
   
-  // Checks the authorization status and shows an alert or get's the user location.
+  // Checks the authorization status and shows the location or an alert if not authorized
   func checkAndAskForAuthorization() {
     if CLLocationManager.locationServicesEnabled() {
       switch CLLocationManager.authorizationStatus() {
@@ -174,7 +174,7 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController: MKMapViewDelegate {
   
-  // Configures a new annotation view after trying to reuse an ond one
+  // Configures a new annotation view after trying to reuse an old one
   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
     guard annotation is MKPointAnnotation else { return nil }
     let annotationIdentifier = "AnnotationIdentifier"
