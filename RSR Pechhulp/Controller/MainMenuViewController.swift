@@ -9,7 +9,7 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
-
+  
   @IBOutlet weak var backgroundImageView: UIImageView!
   var sizeClass: UIUserInterfaceSizeClass?
   
@@ -21,7 +21,7 @@ class MainMenuViewController: UIViewController {
   }
   
   // MARK: - Styles
-
+  
   // Sets up the navigation bar with the correct background and title color.
   private func setupNavigationBar(){
     guard let navigationController = navigationController else { return }
@@ -35,13 +35,13 @@ class MainMenuViewController: UIViewController {
   // Changes background image if the device is regular width
   private func setupBackgroundImage(){
     if sizeClass == .regular {
-       backgroundImageView.image = UIImage(named: "img_background_ipad.png")
+      backgroundImageView.image = UIImage(named: "img_background_ipad.png")
     }
   }
   
   // MARK: - Navigation
-
+  
   // Unwind segue that takes the user back to the main menu
   @IBAction func backToMainMenu(_ segue: UIStoryboardSegue) {}
- 
+  
 }

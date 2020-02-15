@@ -11,7 +11,7 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController {
-
+  
   @IBOutlet fileprivate weak var mapView: MKMapView!
   @IBOutlet fileprivate weak var addressAnnotation: UIView!
   @IBOutlet fileprivate weak var addressLabel: UILabel!
@@ -33,9 +33,9 @@ class MapViewController: UIViewController {
     checkInternetAccess()
   }
 }
- 
-  // MARK: - Phone Call
-  
+
+// MARK: - Phone Call
+
 extension MapViewController: PhoneCall {
   
   // Triggers confirmation view for call and hides annotation view
@@ -48,7 +48,7 @@ extension MapViewController: PhoneCall {
     makePhoneCall(withPhoneNumber: "09007788990")
     hideOrShowAddressAndCallButton()
   }
-
+  
   // Hides confirmation view for call and presents annotation view
   @IBAction func cancelButtonPressed(_ sender: Any) {
     hideOrShowAddressAndCallButton()
@@ -60,15 +60,15 @@ extension MapViewController: PhoneCall {
     Helper.setView(addressAnnotation, hidden: !addressAnnotation.isHidden)
     Helper.setView(firstCallButton, hidden: !firstCallButton.isHidden)
   }
-   
+  
   // Makes the device show the link to call with the specified number
   func makePhoneCall(withPhoneNumber number: String) {
     if let phoneURL = NSURL(string: ("tel://" + number)) {
       UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
     }
-   }
+  }
 }
-  
+
 // MARK: - Connectivity
 
 extension MapViewController: Connectivity {
@@ -116,21 +116,21 @@ extension MapViewController: CLLocationManagerDelegate {
   
   // Prints an error message if localisation failed.
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-     print("Error \(error)")
+    print("Error \(error)")
   }
   
   // Checks the authorization status and shows the location or an alert if not authorized
   func checkAndAskForAuthorization() {
     if CLLocationManager.locationServicesEnabled() {
       switch CLLocationManager.authorizationStatus() {
-        case .notDetermined:
-         locationManager.requestWhenInUseAuthorization()
-        case .denied, .restricted:
-          Helper.showAlert(from: self, title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [Helper.openAppPrivacySettings()])
-        case .authorizedAlways, .authorizedWhenInUse:
-          locationManager.startMonitoringSignificantLocationChanges()
-        default:
-          break
+      case .notDetermined:
+        locationManager.requestWhenInUseAuthorization()
+      case .denied, .restricted:
+        Helper.showAlert(from: self, title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [Helper.openAppPrivacySettings()])
+      case .authorizedAlways, .authorizedWhenInUse:
+        locationManager.startMonitoringSignificantLocationChanges()
+      default:
+        break
       }
     } else { // If Authorization is disabled device-wide
       Helper.showAlert(from: self, title: "GPS disabled on Device", message: "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.")
@@ -138,17 +138,17 @@ extension MapViewController: CLLocationManagerDelegate {
   }
   
   // Listens to changes in authorization for localisation
-   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-      checkAndAskForAuthorization()
-   }
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    checkAndAskForAuthorization()
+  }
   
   // Updates the label for the address in the annotation box by calling the geocode method of CLLocation
   private func updateAddressAnnotation(forLocation location: CLLocation) {
     location.geocode { placemark, error in
       if let error = error as? CLError {
         print("CLError:", error)
-    } else if let placemark = placemark?.first {
-        self.configureAddressAnnotation(forPlacemark: placemark)
+      } else if let placemark = placemark?.first {
+          self.configureAddressAnnotation(forPlacemark: placemark)
       }
     }
   }
@@ -160,10 +160,10 @@ extension MapViewController: CLLocationManagerDelegate {
         let number = placemark.subThoroughfare,
         let zip = placemark.postalCode,
         let city = placemark.locality {
-          self.addressLabel.text = """
-            \(street) \(number),
-          \(zip), \(city)
-          """
+        self.addressLabel.text = """
+        \(street) \(number),
+        \(zip), \(city)
+        """
       }
     }
   }
@@ -183,10 +183,10 @@ extension MapViewController: MKMapViewDelegate {
     if annotationView == nil {
       annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
       guard let annotationView = annotationView else { return nil }
-        configureView(forAnnotation: annotationView)
+      configureView(forAnnotation: annotationView)
     } else {
-        annotationView?.annotation = annotation
-      }
+      annotationView?.annotation = annotation
+    }
     
     return annotationView
   }

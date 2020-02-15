@@ -10,6 +10,6 @@ import MapKit
 
 public extension CLLocation {
   func geocode(completion: @escaping (_ placemark: [CLPlacemark]?, _ error: Error?) -> Void)  {
-      CLGeocoder().reverseGeocodeLocation(self, completionHandler: completion)
+    CLGeocoder().reverseGeocodeLocation(self, completionHandler: completion)
   }
 }

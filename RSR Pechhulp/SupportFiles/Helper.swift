@@ -9,7 +9,7 @@
 import UIKit
 
 class Helper {
- 
+  
   // Shows a custom alert with custom or default actions
   static func showAlert(from controller: UIViewController, title: String, message: String, actions: [UIAlertAction] = []) {
     let alert = UIAlertController(title:title, message: message, preferredStyle: .alert)
@@ -19,15 +19,15 @@ class Helper {
       }
     } else {
       alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-   }
+    }
     controller.present(alert, animated: true, completion: nil)
   }
- 
+  
   // Makes a view (in)visible with a smooth animation
- static func setView(_ view: UIView, hidden: Bool) {
-   UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
-       view.isHidden = hidden
-   })
+  static func setView(_ view: UIView, hidden: Bool) {
+    UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+      view.isHidden = hidden
+    })
   }
   
   // Opens the privacy settings for localisation of the app on the device
@@ -35,7 +35,7 @@ class Helper {
     let action = UIAlertAction(title: "Go to Settings now", style: .default, handler: { alert in
       guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
       UIApplication.shared.open(settingsUrl)
-      }
+    }
     )
     return action
   }
