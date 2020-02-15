@@ -10,7 +10,8 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
-  @IBOutlet var mainMenuView: MainMenuView!
+  
+  @IBOutlet weak var backgroundImageView: UIImageView!
   var sizeClass: UIUserInterfaceSizeClass?
   
   override func viewDidLoad() {
@@ -32,7 +33,7 @@ class MainMenuViewController: UIViewController {
   
   private func setupBackgroundImage(){
     if sizeClass == .regular {
-      mainMenuView.loadBackgroundImageWithRegularSize()
+       backgroundImageView.image = UIImage(named: "img_background_ipad.png")
     }
   }
     

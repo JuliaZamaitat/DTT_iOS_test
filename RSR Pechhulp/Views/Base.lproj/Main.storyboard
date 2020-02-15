@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="wNR-0q-ZWI"/>
                         <viewControllerLayoutGuide type="bottom" id="tXn-tc-nVg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MainMenuView" customModule="RSR_Pechhulp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -112,9 +112,6 @@
                                 <include reference="Xve-0j-Ud0"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <outlet property="backgroundImageView" destination="kft-Ov-BkR" id="0ag-Ip-Eo0"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="RSR Revalidatieservice" id="idC-WJ-bBy">
                         <barButtonItem key="rightBarButtonItem" title="About" image="ic_over_normal" id="kco-Kd-71A">
@@ -123,9 +120,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="mainMenuView" destination="8bC-Xf-vdC" id="3qA-FJ-nuD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,7 +133,7 @@
                         <viewControllerLayoutGuide type="top" id="XBM-xv-SWw"/>
                         <viewControllerLayoutGuide type="bottom" id="cq9-1g-3Dh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="f7g-zd-hZe" customClass="AboutPage" customModule="RSR_Pechhulp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="f7g-zd-hZe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -264,10 +258,6 @@
                                 <include reference="t1H-cd-fDy"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <outlet property="imageView" destination="uR0-ci-q9F" id="gh1-k9-LIo"/>
-                            <outlet property="textView" destination="qi9-vb-lZd" id="wKE-J2-YlM"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Over RSR" id="49f-k8-Vio">
                         <barButtonItem key="backBarButtonItem" title="Terug" id="RxD-xB-avT"/>
@@ -278,7 +268,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="aboutPageView" destination="f7g-zd-hZe" id="K34-uo-eUl"/>
+                        <outlet property="textView" destination="qi9-vb-lZd" id="nqe-uh-vfI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBU-3X-rUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

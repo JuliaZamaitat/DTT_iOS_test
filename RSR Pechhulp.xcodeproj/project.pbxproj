@@ -15,9 +15,7 @@
 		A3D3874523F58B8F00BA2088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D3874423F58B8F00BA2088 /* Assets.xcassets */; };
 		A3D3874823F58B8F00BA2088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D3874623F58B8F00BA2088 /* LaunchScreen.storyboard */; };
 		A3D3875023F59BA100BA2088 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3874F23F59BA100BA2088 /* MainMenuViewController.swift */; };
-		A3D3875223F5C67F00BA2088 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3875123F5C67E00BA2088 /* MainMenuView.swift */; };
 		A3D3875C23F5DEB300BA2088 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3875B23F5DEB200BA2088 /* AboutPageViewController.swift */; };
-		A3D3875E23F5F97400BA2088 /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3875D23F5F97400BA2088 /* AboutPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +29,7 @@
 		A3D3874723F58B8F00BA2088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3D3874923F58B8F00BA2088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3D3874F23F59BA100BA2088 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		A3D3875123F5C67E00BA2088 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		A3D3875B23F5DEB200BA2088 /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutPageViewController.swift; path = "RSR Pechhulp/Controller/AboutPageViewController.swift"; sourceTree = SOURCE_ROOT; };
-		A3D3875D23F5F97400BA2088 /* AboutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +87,6 @@
 			children = (
 				A3D3874623F58B8F00BA2088 /* LaunchScreen.storyboard */,
 				A3D3874123F58B8D00BA2088 /* Main.storyboard */,
-				A3D3875D23F5F97400BA2088 /* AboutPage.swift */,
-				A3D3875123F5C67E00BA2088 /* MainMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,9 +181,7 @@
 			files = (
 				A3D3875C23F5DEB300BA2088 /* AboutPageViewController.swift in Sources */,
 				A3D3875023F59BA100BA2088 /* MainMenuViewController.swift in Sources */,
-				A3D3875E23F5F97400BA2088 /* AboutPage.swift in Sources */,
 				A3D3873C23F58B8D00BA2088 /* AppDelegate.swift in Sources */,
-				A3D3875223F5C67F00BA2088 /* MainMenuView.swift in Sources */,
 				A3D3873E23F58B8D00BA2088 /* SceneDelegate.swift in Sources */,
 				A327562B23F71F7A00DB6C1C /* Reachability.swift in Sources */,
 				A327562923F6B4A900DB6C1C /* MapViewController.swift in Sources */,
