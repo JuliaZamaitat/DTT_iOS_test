@@ -40,5 +40,3 @@ class Helper {
     return action
   }
 }
-
-

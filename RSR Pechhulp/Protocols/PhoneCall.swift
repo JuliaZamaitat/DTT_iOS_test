@@ -9,4 +9,3 @@
 public protocol PhoneCall {
   func makePhoneCall(withPhoneNumber number: String)
 }
-
