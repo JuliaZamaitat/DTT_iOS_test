@@ -9,6 +9,8 @@
 
 import SystemConfiguration
 
+// I decided not to use the CocoaPods Reachability library for the sake of simplicity - the Connection now only gets checked once when the map view becomes
+// visible
 public class Reachability {
   
   private static var shared: Reachability?

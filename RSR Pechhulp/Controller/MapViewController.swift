@@ -30,7 +30,6 @@ class MapViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    addressAnnotation.isHidden = false
     setupLocationManager()
     checkInternetAccess()
     
@@ -44,16 +43,19 @@ class MapViewController: UIViewController {
     }
   }
   
+  // MARK: - Phone Call
+  
   @IBAction func firstCallButtonPressed(_ sender: Any) {
      hideOrShowAddressAndCallButton()
   }
   @IBAction func secondCallButtonPressed(_ sender: Any) {
-    makePhoneCall(withPhoneNumber: "09003344556")
+    makePhoneCall(withPhoneNumber: "09007788990")
   }
   
   func makePhoneCall(withPhoneNumber number: String) {
     if let phoneURL = NSURL(string: ("tel://" + number)) {
       UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+      hideOrShowAddressAndCallButton()
     }
   }
   
@@ -62,9 +64,9 @@ class MapViewController: UIViewController {
   }
   
   func hideOrShowAddressAndCallButton() {
-    callNowView.isHidden = !callNowView.isHidden
-    addressAnnotation.isHidden = !addressAnnotation.isHidden
-    firstCallButton.isHidden = !firstCallButton.isHidden
+    setView(callNowView, hidden: !callNowView.isHidden)
+    setView(addressAnnotation, hidden: !addressAnnotation.isHidden)
+    setView(firstCallButton, hidden: !firstCallButton.isHidden)
   }
   
   // MARK: - HelperMethods
@@ -80,6 +82,12 @@ class MapViewController: UIViewController {
     }
     self.present(alert, animated: true, completion: nil)
     }
+  }
+
+  func setView(_ view: UIView, hidden: Bool) {
+    UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+        view.isHidden = hidden
+    })
   }
 
 
@@ -109,6 +117,7 @@ extension MapViewController: CLLocationManagerDelegate {
     let myAnnotation: MKPointAnnotation = MKPointAnnotation()
     myAnnotation.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
     self.mapView.addAnnotation(myAnnotation)
+    addressAnnotation.isHidden = false
   }
   
   //Prints an error message if localisation failed.
