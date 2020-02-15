@@ -19,7 +19,9 @@ class MapViewController: UIViewController {
   @IBOutlet fileprivate weak var firstCallButton: UIButton!
   @IBOutlet fileprivate weak var cancelButton: UIButton!
   
-  fileprivate let locationManager: CLLocationManager = CLLocationManager()
+  fileprivate lazy var locationManager: CLLocationManager = {
+    return CLLocationManager()
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
