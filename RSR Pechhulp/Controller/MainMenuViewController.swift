@@ -10,7 +10,6 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
-  
   @IBOutlet weak var backgroundImageView: UIImageView!
   var sizeClass: UIUserInterfaceSizeClass?
   
@@ -20,6 +19,8 @@ class MainMenuViewController: UIViewController {
     setupNavigationBar()
     setupBackgroundImage()
   }
+  
+  // MARK: - Styles
 
   // Sets up the navigation bar with the correct background and title color.
   private func setupNavigationBar(){
@@ -31,27 +32,16 @@ class MainMenuViewController: UIViewController {
     }
   }
   
+  // Changes background image if the device is regular width
   private func setupBackgroundImage(){
     if sizeClass == .regular {
        backgroundImageView.image = UIImage(named: "img_background_ipad.png")
     }
   }
-    
-    
   
-  
-    
   // MARK: - Navigation
 
+  // Unwind segue that takes the user back to the main menu
   @IBAction func backToMainMenu(_ segue: UIStoryboardSegue) {}
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
-  
-  
-    
  
 }
