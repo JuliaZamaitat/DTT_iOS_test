@@ -47,16 +47,19 @@ class MapViewInteractor: MapViewInteractorInput {
   }
   
   func checkInternetAccess(_ request: MapView.Connection.Request) {
-    if !request.netStatus.isMonitoring {
-      request.netStatus.startMonitoring()
-      print("was not monitoring")
-    }
-    
-    let connected = request.netStatus.isConnected
-    if !connected {
-      let response = MapView.Connection.Response(connected: connected)
-      output.presentAlert(response: response)
-      print("was not connected")
+    DispatchQueue.global().async {
+      if !request.netStatus.isMonitoring {
+        request.netStatus.startMonitoring()
+        print("was not monitoring")
+      }
+      DispatchQueue.main.async {
+        let connected = request.netStatus.isConnected
+        if !connected {
+          let response = MapView.Connection.Response(connected: connected)
+          self.output.presentAlert(response: response)
+          print("was not connected")
+        }
+      }
     }
   }
   

@@ -66,6 +66,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A35D4F5A240EE77E00118B81 /* Locales */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDB7A1240EC55000912B9F /* LocalizableDelegate.swift */,
+				A3CDB79F240EC4A800912B9F /* Localizable.swift */,
+				A3CDB79D240EC0FC00912B9F /* Localizable.strings */,
+			);
+			path = Locales;
+			sourceTree = "<group>";
+		};
 		A3611DF623F873FC002430C9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,9 +151,7 @@
 		A3D3873A23F58B8D00BA2088 /* RSR Pechhulp */ = {
 			isa = PBXGroup;
 			children = (
-				A3CDB7A1240EC55000912B9F /* LocalizableDelegate.swift */,
-				A3CDB79F240EC4A800912B9F /* Localizable.swift */,
-				A3CDB79D240EC0FC00912B9F /* Localizable.strings */,
+				A35D4F5A240EE77E00118B81 /* Locales */,
 				A3CDB777240E55D700912B9F /* Scenes */,
 				A3611DF723F87428002430C9 /* Extensions */,
 				A3611DF623F873FC002430C9 /* Protocols */,

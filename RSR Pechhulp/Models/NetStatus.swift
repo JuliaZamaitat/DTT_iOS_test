@@ -29,7 +29,7 @@ class NetStatus {
   
   func startMonitoring() {
       guard !isMonitoring else { return }
-   
+      print("starting monitoring")
       monitor = NWPathMonitor()
       let queue = DispatchQueue(label: "NetStatus_Monitor")
       monitor?.start(queue: queue)
