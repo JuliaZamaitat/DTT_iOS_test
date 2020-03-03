@@ -102,9 +102,9 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
     
     // Makes the call box, button and address annotation (in)visible depending on how the previous state was
     func hideOrShowAddressAndCallButton(){
-      Helper.setView(callNowView, hidden: !callNowView.isHidden)
-      Helper.setView(addressAnnotation, hidden: !addressAnnotation.isHidden)
-      Helper.setView(firstCallButton, hidden: !firstCallButton.isHidden)
+      callNowView.setView(hidden: !callNowView.isHidden)
+      addressAnnotation.setView(hidden: !addressAnnotation.isHidden)
+      firstCallButton.setView(hidden: !firstCallButton.isHidden)
     }
     
     
@@ -131,7 +131,7 @@ extension MapViewViewController: Connectivity {
   
   func showConnectionAlert(viewModel: MapView.Connection.ViewModel) {
     if !viewModel.connected {
-      Helper.showAlert(from: self, title: "No Connection", message: "You are not connected to the internet. Please turn on your WiFi or mobile services.")
+      showAlert(title: "No Connection", message: "You are not connected to the internet. Please turn on your WiFi or mobile services.")
     }
   }
 }
@@ -207,9 +207,9 @@ extension MapViewViewController: CLLocationManagerDelegate {
 
   func showAuthorizationAlert(viewModel: MapView.Authorization.ViewModel) {
     if viewModel.authorizationStatus == "denied" {
-      Helper.showAlert(from: self, title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [Helper.openAppPrivacySettings()])
+      showAlert(title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [openAppPrivacySettings()])
     } else {
-     Helper.showAlert(from: self, title: "GPS disabled on Device", message: "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.")
+      showAlert(title: "GPS disabled on Device", message: "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.")
     }
   }
   
@@ -224,11 +224,6 @@ extension MapViewViewController: MKMapViewDelegate {
     guard annotation is MKPointAnnotation else { return nil }
     
     let request = MapView.MapView.Request(mapView: mapView, annotation: annotation)
-
-    
-    
-    
-    
     return output.configureAnnotationView(request)
   }
   
@@ -240,6 +235,32 @@ extension MapViewViewController: MKMapViewDelegate {
     addressAnnotation.frame = CGRect(x: -(addressAnnotation.frame.width  / 2) + 13, y: -(addressAnnotation.frame.height) - 5, width: addressAnnotation.frame.width, height: addressAnnotation.frame.height) //I don't know why this has to be so weirdly hardcoded to be centered, probably some margins that intervene (?)
     annotation.addSubview(addressAnnotation)
   }
+}
+
+
+extension MapViewViewController: AlertManager {
+  func showAlert(title: String, message: String, actions: [UIAlertAction] = []) {
+      let alert = UIAlertController(title:title, message: message, preferredStyle: .alert)
+      if !actions.isEmpty {
+        for action in actions {
+          alert.addAction(action)
+        }
+      } else {
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      }
+      self.present(alert, animated: true, completion: nil)
+    }
+    
+   
+    // Opens the privacy settings for localisation of the app on the device
+   func openAppPrivacySettings() -> UIAlertAction {
+      let action = UIAlertAction(title: "Go to Settings now", style: .default, handler: { alert in
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+        UIApplication.shared.open(settingsUrl)
+      }
+      )
+      return action
+    }
 }
 
 
