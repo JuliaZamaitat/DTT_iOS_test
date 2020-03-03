@@ -11,9 +11,6 @@ import UIKit
 // MARK: Connect View, Interactor, and Presenter
  
 extension MapViewViewController: MapViewPresenterOutput {
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    router.passDataToNextScene(segue: segue)
-//  }
 }
  
 extension MapViewInteractor: MapViewViewControllerOutput {
@@ -32,9 +29,6 @@ class MapViewConfigurator {
   // MARK: Configuration
  
   func configure(viewController: MapViewViewController) {
-    let router = MapViewRouter()
-    router.viewController = viewController
- 
     let presenter = MapViewPresenter()
     presenter.output = viewController
  
@@ -42,7 +36,6 @@ class MapViewConfigurator {
     interactor.output = presenter
  
     viewController.output = interactor
-    viewController.router = router
   }
 }
  

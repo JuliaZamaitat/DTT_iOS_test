@@ -42,7 +42,6 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
    }()
 
   var output: MapViewViewControllerOutput!
-  var router: MapViewRouter!
   
   override func awakeFromNib() {
     super.awakeFromNib()

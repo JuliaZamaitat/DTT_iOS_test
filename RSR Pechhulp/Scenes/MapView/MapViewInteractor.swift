@@ -30,7 +30,6 @@ protocol MapViewInteractorOutput{
  
 class MapViewInteractor: MapViewInteractorInput {
   var output: MapViewInteractorOutput!
-  var worker: MapViewWorker!
  
   // MARK: Business logic
  
@@ -72,7 +71,6 @@ class MapViewInteractor: MapViewInteractorInput {
     } else { // If Authorization is disabled device-wide
       let response = MapView.Authorization.Response(authorizationStatus: "disabled")
       output.presentAuthorizationAlert(response: response)
-     
     }
   }
   
@@ -92,7 +90,6 @@ class MapViewInteractor: MapViewInteractorInput {
       } else if let placemark = placemark?.first {
         let response = MapView.Annotation.Response(placemark: placemark)
         self.output.presentAddressAnnoation(response: response)
-          
       }
     }
   }

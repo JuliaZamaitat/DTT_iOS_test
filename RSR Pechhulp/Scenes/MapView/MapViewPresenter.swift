@@ -45,7 +45,6 @@ class MapViewPresenter: MapViewPresenterInput {
   }
   
   func presentAuthorizationAlert(response: MapView.Authorization.Response) {
-   
     let viewModel = MapView.Authorization.ViewModel(authorizationStatus: response.authorizationStatus)
     output.showAuthorizationAlert(viewModel: viewModel)
   }
@@ -61,7 +60,6 @@ class MapViewPresenter: MapViewPresenterInput {
   }
   
   func presentAnnotationView(response: MapView.MapView.Response) {
-    
     let viewModel = MapView.MapView.ViewModel(annotationView: response.annotationView)
     output.configureAnnotationView(viewModel: viewModel)
   }
