@@ -6,6 +6,6 @@
 //  Copyright © 2020 Julia Zamaitat. All rights reserved.
 //
 
-public protocol PhoneCall {
+public protocol PhoneCall2 {
   func makePhoneCall(withPhoneNumber number: String)
 }

@@ -7,27 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A327562923F6B4A900DB6C1C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A327562823F6B4A900DB6C1C /* MapViewController.swift */; };
 		A327562B23F71F7A00DB6C1C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A327562A23F71F7A00DB6C1C /* Reachability.swift */; };
 		A332B19F23F82ED500C93BCC /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332B19E23F82ED500C93BCC /* CLLocationExtension.swift */; };
 		A3724B8123F821CA007A12F8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3724B8023F821CA007A12F8 /* Helper.swift */; };
 		A3724B8423F82AD2007A12F8 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3724B8223F82816007A12F8 /* Connectivity.swift */; };
 		A392923823F82C0D002BB050 /* PhoneCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392923723F82C0D002BB050 /* PhoneCall.swift */; };
+		A3CDB77A240E56BF00912B9F /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB779240E56BF00912B9F /* MapViewViewController.swift */; };
+		A3CDB77C240E58FD00912B9F /* MapViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB77B240E58FD00912B9F /* MapViewModels.swift */; };
+		A3CDB77E240E5B4A00912B9F /* MapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB77D240E5B4A00912B9F /* MapViewInteractor.swift */; };
+		A3CDB782240E5CBF00912B9F /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB781240E5CBF00912B9F /* MapViewPresenter.swift */; };
+		A3CDB786240E5F1400912B9F /* MapViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB785240E5F1400912B9F /* MapViewConfigurator.swift */; };
+		A3CDB789240EB6E500912B9F /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB788240EB6E500912B9F /* AboutPageViewController.swift */; };
 		A3D3873C23F58B8D00BA2088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3873B23F58B8D00BA2088 /* AppDelegate.swift */; };
 		A3D3874323F58B8D00BA2088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D3874123F58B8D00BA2088 /* Main.storyboard */; };
 		A3D3874523F58B8F00BA2088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3D3874423F58B8F00BA2088 /* Assets.xcassets */; };
 		A3D3874823F58B8F00BA2088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D3874623F58B8F00BA2088 /* LaunchScreen.storyboard */; };
 		A3D3875023F59BA100BA2088 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3874F23F59BA100BA2088 /* MainMenuViewController.swift */; };
-		A3D3875C23F5DEB300BA2088 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3875B23F5DEB200BA2088 /* AboutPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A327562823F6B4A900DB6C1C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "RSR Pechhulp/Controller/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A327562A23F71F7A00DB6C1C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A332B19E23F82ED500C93BCC /* CLLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationExtension.swift; sourceTree = "<group>"; };
 		A3724B8023F821CA007A12F8 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A3724B8223F82816007A12F8 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		A392923723F82C0D002BB050 /* PhoneCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCall.swift; sourceTree = "<group>"; };
+		A3CDB779240E56BF00912B9F /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
+		A3CDB77B240E58FD00912B9F /* MapViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModels.swift; sourceTree = "<group>"; };
+		A3CDB77D240E5B4A00912B9F /* MapViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInteractor.swift; sourceTree = "<group>"; };
+		A3CDB781240E5CBF00912B9F /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
+		A3CDB785240E5F1400912B9F /* MapViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewConfigurator.swift; sourceTree = "<group>"; };
+		A3CDB788240EB6E500912B9F /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 		A3D3873823F58B8D00BA2088 /* RSR Pechhulp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSR Pechhulp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D3873B23F58B8D00BA2088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D3874223F58B8D00BA2088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,7 +44,6 @@
 		A3D3874723F58B8F00BA2088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3D3874923F58B8F00BA2088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3D3874F23F59BA100BA2088 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		A3D3875B23F5DEB200BA2088 /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutPageViewController.swift; path = "RSR Pechhulp/Controller/AboutPageViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,44 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A3CDB777240E55D700912B9F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDB796240EB91600912B9F /* MainMenu */,
+				A3CDB787240EB6D000912B9F /* AboutPage */,
+				A3CDB778240E560A00912B9F /* MapView */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A3CDB778240E560A00912B9F /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDB779240E56BF00912B9F /* MapViewViewController.swift */,
+				A3CDB77B240E58FD00912B9F /* MapViewModels.swift */,
+				A3CDB77D240E5B4A00912B9F /* MapViewInteractor.swift */,
+				A3CDB781240E5CBF00912B9F /* MapViewPresenter.swift */,
+				A3CDB785240E5F1400912B9F /* MapViewConfigurator.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		A3CDB787240EB6D000912B9F /* AboutPage */ = {
+			isa = PBXGroup;
+			children = (
+				A3CDB788240EB6E500912B9F /* AboutPageViewController.swift */,
+			);
+			path = AboutPage;
+			sourceTree = "<group>";
+		};
+		A3CDB796240EB91600912B9F /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A3D3874F23F59BA100BA2088 /* MainMenuViewController.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
 		A3D3872F23F58B8D00BA2088 = {
 			isa = PBXGroup;
 			children = (
@@ -85,35 +131,25 @@
 		A3D3873A23F58B8D00BA2088 /* RSR Pechhulp */ = {
 			isa = PBXGroup;
 			children = (
+				A3CDB777240E55D700912B9F /* Scenes */,
 				A3611DF723F87428002430C9 /* Extensions */,
 				A3611DF623F873FC002430C9 /* Protocols */,
 				A3D3874923F58B8F00BA2088 /* Info.plist */,
 				A3D3875A23F5DB5D00BA2088 /* SupportFiles */,
 				A3D3875923F5DA9B00BA2088 /* Models */,
-				A3D3875823F5DA8E00BA2088 /* Views */,
-				A3D3875723F5DA5700BA2088 /* Controller */,
+				A3D3875823F5DA8E00BA2088 /* Storyboards */,
 				A3D3874423F58B8F00BA2088 /* Assets.xcassets */,
 			);
 			path = "RSR Pechhulp";
 			sourceTree = "<group>";
 		};
-		A3D3875723F5DA5700BA2088 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A327562823F6B4A900DB6C1C /* MapViewController.swift */,
-				A3D3875B23F5DEB200BA2088 /* AboutPageViewController.swift */,
-				A3D3874F23F59BA100BA2088 /* MainMenuViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		A3D3875823F5DA8E00BA2088 /* Views */ = {
+		A3D3875823F5DA8E00BA2088 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				A3D3874623F58B8F00BA2088 /* LaunchScreen.storyboard */,
 				A3D3874123F58B8D00BA2088 /* Main.storyboard */,
 			);
-			path = Views;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		A3D3875923F5DA9B00BA2088 /* Models */ = {
@@ -205,14 +241,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A392923823F82C0D002BB050 /* PhoneCall.swift in Sources */,
-				A3D3875C23F5DEB300BA2088 /* AboutPageViewController.swift in Sources */,
+				A3CDB77E240E5B4A00912B9F /* MapViewInteractor.swift in Sources */,
+				A3CDB782240E5CBF00912B9F /* MapViewPresenter.swift in Sources */,
 				A3724B8123F821CA007A12F8 /* Helper.swift in Sources */,
+				A3CDB77A240E56BF00912B9F /* MapViewViewController.swift in Sources */,
 				A3D3875023F59BA100BA2088 /* MainMenuViewController.swift in Sources */,
 				A332B19F23F82ED500C93BCC /* CLLocationExtension.swift in Sources */,
 				A3D3873C23F58B8D00BA2088 /* AppDelegate.swift in Sources */,
 				A327562B23F71F7A00DB6C1C /* Reachability.swift in Sources */,
-				A327562923F6B4A900DB6C1C /* MapViewController.swift in Sources */,
 				A3724B8423F82AD2007A12F8 /* Connectivity.swift in Sources */,
+				A3CDB77C240E58FD00912B9F /* MapViewModels.swift in Sources */,
+				A3CDB786240E5F1400912B9F /* MapViewConfigurator.swift in Sources */,
+				A3CDB789240EB6E500912B9F /* AboutPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
