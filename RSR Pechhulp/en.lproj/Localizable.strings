@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  RSR Pechhulp
+
+  Created by Julia Zamaitat on 03.03.20.
+  Copyright © 2020 Julia Zamaitat. All rights reserved.
+*/
+
+// MARK: - MainMenu
+
+"welcomeTitle" = "RSR Rehabilitation Service";
+
+
+
+// MARK: - About Page
+
+"title" = "About RSR";
+
+"aboutTextPt1" = "With the help of RSR you stay mobile. RSR is the supplier of aids in the Northeast Netherlands region. Thorough knowledge and years of experience are woven into our DNA and lead to the best advice.";
+
+
+"aboutTextPt2" = "If you want to know more about our products and services, go to www.rsr.nl or visit our showrooms in Silvolde and Nieuwleusen. We are open every working day from 8 a.m. to 5 p.m. Here you can try out various tools and quietly view what fits well with your situation. Together with you we look for tools that suit you. RSR makes people mobile.";
+
+
+// MARK: - MapView
+
+"callNow" = "Call RSR now";
+
+"callNowConfirmation" = "Call now";
+
+"cancel" = "Cancel";
+
+"costDescription" = "You pay your usual calling costs for this number";
+
+"costTitle" = "Calling costs";
+
+"locationTitle" = "Your location:";
+
+"locationDescription" = "Remember this location for the phone call";

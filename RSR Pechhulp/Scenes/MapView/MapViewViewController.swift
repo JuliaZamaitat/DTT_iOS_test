@@ -36,6 +36,11 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
   @IBOutlet fileprivate weak var callNowView: UIView!
   @IBOutlet fileprivate weak var firstCallButton: UIButton!
   @IBOutlet fileprivate weak var cancelButton: UIButton!
+  @IBOutlet fileprivate weak var secondCallButton: UIButton!
+  @IBOutlet weak var descriptionLabel: UILabel!
+  @IBOutlet weak var descriptionTitle: UILabel!
+  @IBOutlet weak var locationTitle: UILabel!
+  @IBOutlet weak var locationDescription: UILabel!
   
   fileprivate lazy var locationManager: CLLocationManager = {
      return CLLocationManager()
@@ -54,6 +59,7 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
     super.viewDidLoad()
     addressAnnotation.isHidden = true
     callNowView.isHidden = true
+    configureLocalizations()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -62,6 +68,15 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
     checkInternetAccess()
   }
   
+  func configureLocalizations(){
+    firstCallButton.setTitle(Localizable.MapView.callNow.localized, for: .normal)
+    secondCallButton.setTitle(Localizable.MapView.callNowConfirmation.localized, for: .normal)
+    cancelButton.setTitle(Localizable.MapView.cancel.localized, for: .normal)
+    descriptionLabel.text = Localizable.MapView.costDescription.localized
+    descriptionTitle.text = Localizable.MapView.costTitle.localized
+    locationTitle.text = Localizable.MapView.locationTitle.localized
+    locationDescription.text = Localizable.MapView.locationDescription.localized
+  }
 }
   
   // MARK: - Phone Call
