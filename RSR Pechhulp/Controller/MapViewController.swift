@@ -38,7 +38,7 @@ class MapViewController: UIViewController {
 
 // MARK: - Phone Call
 
-extension MapViewController: PhoneCall {
+extension MapViewController: PhoneCall2 {
   
   // Triggers confirmation view for call and hides annotation view
   @IBAction func firstCallButtonPressed(_ sender: Any) {
