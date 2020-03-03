@@ -7,18 +7,104 @@
 //
 
 import UIKit
+import MapKit
 
 enum MapView {
   
-  struct Request {
-    var phoneNumber: String
+  enum PhoneCall {
+  
+    struct Request {
+      var phoneNumber: String
+    }
+    
+    struct Response {
+      var phoneURL: NSURL
+    }
+    
+    struct ViewModel {
+      var phoneURL: URL
+    }
   }
   
-  struct Response {
-    var phoneURL: NSURL
+  
+  enum Connection {
+  
+    struct Request {
+      var reachability: Reachability
+    }
+    
+    struct Response {
+      var connected: Bool
+    }
+    
+    struct ViewModel {
+      var connected: Bool
+    }
   }
   
-  struct ViewModel {
-    var phoneURL: URL
+  enum Authorization {
+  
+    struct Request {
+      var locationManager: CLLocationManager
+    }
+    
+    struct Response {
+      var authorizationStatus: String
+    }
+    
+    struct ViewModel {
+      var authorizationStatus: String
+    }
   }
+  
+  enum Location {
+  
+    struct Request {
+      var locations: [CLLocation]
+    }
+    
+    struct Response {
+      var userLocation: CLLocation
+      var region: MKCoordinateRegion
+    }
+    
+    struct ViewModel {
+      var userLocation: CLLocation
+      var region: MKCoordinateRegion
+    }
+    
+    
+  }
+  
+  enum Annotation {
+  
+    struct Request {
+     var location: CLLocation
+    }
+    
+    struct Response {
+      var placemark: CLPlacemark
+    }
+    
+    struct ViewModel {
+      var placemark: CLPlacemark
+    }
+  }
+  
+  enum MapView {
+  
+    struct Request {
+     var mapView: MKMapView
+     var annotation: MKAnnotation
+    }
+    
+    struct Response {
+      var annotationView: MKAnnotationView
+    }
+    
+    struct ViewModel {
+       var annotationView: MKAnnotationView
+    }
+  }
+  
 }
