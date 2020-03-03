@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  RSR Pechhulp
+
+  Created by Julia Zamaitat on 03.03.20.
+  Copyright © 2020 Julia Zamaitat. All rights reserved.
+*/
+
+
+// MARK: - MainMenu
+
+"welcomeTitle" = "RSR Revalidatieservice";
+
+
+// MARK: - About Page
+
+"title" = "Over RSR";
+
+"aboutTextPt1" = "Met de hulp van RSR blijft u mobiel. RSR is dé leverancier van hulpmiddelen in de regio Noordoost-Nederland. Gedegen kennis en jarenlange ervaring zit in ons DNA verweven en leidt tot het beste advies.";
+
+"aboutTextPt2" = "Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bezoek onze showrooms in Silvolde en Nieuwleusen. We zijn iedere werkdag geopend van 8.00 tot 17.00 uur. Hier kunt u diverse hulpmiddelen uitproberen en rustig bekijken wat goed bij uw situatie aansluit. Samen met u zoeken we naar hulpmiddelen dat bij u past. RSR maakt mensen mobiel.";
+
+
+
+// MARK: - MapView
+
+"callNow" = "Bel RSR nu";
+
+"callNowConfirmation" = "Bel nu";
+
+"cancel" = "Annuleren";
+
+"costDescription" = "Voor dit nummer betallt u uw gebruikelijke belkosten";
+
+"costTitle" = "Belkosten";
+
+"locationTitle" = "Uw locatie:";
+
+"locationDescription" = "Onthoud deze locatie voor het telefoongesprek";

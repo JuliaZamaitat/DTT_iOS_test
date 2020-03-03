@@ -1,0 +1,63 @@
+
+/* Class = "UIButton"; normalTitle = "RSR Pechhulp"; ObjectID = "28K-di-hiA"; */
+"28K-di-hiA.normalTitle" = "RSR Pechhulp";
+
+/* Class = "UINavigationItem"; title = "Over RSR"; ObjectID = "49f-k8-Vio"; */
+"49f-k8-Vio.title" = "Over RSR";
+
+/* Class = "UILabel"; text = "Onthoud deze locatie voor het telefoongesprek"; ObjectID = "4RI-8v-re3"; */
+"4RI-8v-re3.text" = "Onthoud deze locatie voor het telefoongesprek";
+
+/* Class = "UINavigationItem"; title = "RSR Pechhulp"; ObjectID = "8pO-rA-Qwm"; */
+"8pO-rA-Qwm.title" = "RSR Pechhulp";
+
+/* Class = "UILabel"; text = "Voor dit nummer betallt u uw gebruikelijke belkosten"; ObjectID = "EMF-VD-0LH"; */
+"EMF-VD-0LH.text" = "Voor dit nummer betallt u uw gebruikelijke belkosten";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Ea2-12-N2z"; */
+"Ea2-12-N2z.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "RSR Pechhulp"; ObjectID = "EzE-rx-umY"; */
+"EzE-rx-umY.normalTitle" = "RSR Pechhulp";
+
+/* Class = "UIBarButtonItem"; title = "Terug"; ObjectID = "RxD-xB-avT"; */
+"RxD-xB-avT.title" = "Terug";
+
+/* Class = "UIButton"; normalTitle = "Annuleren"; ObjectID = "T8g-ab-wsO"; */
+"T8g-ab-wsO.normalTitle" = "Annuleren";
+
+/* Class = "UILabel"; text = "Belkosten"; ObjectID = "TTA-A4-eEa"; */
+"TTA-A4-eEa.text" = "Belkosten";
+
+/* Class = "UIButton"; normalTitle = "Bel  nu"; ObjectID = "UaN-hP-jfT"; */
+"UaN-hP-jfT.normalTitle" = "Bel  nu";
+
+/* Class = "UILabel"; text = "Uw locatie:"; ObjectID = "V7L-Xc-KLd"; */
+"V7L-Xc-KLd.text" = "Uw locatie:";
+
+/* Class = "UIButton"; normalTitle = "Over RSR"; ObjectID = "bjG-cL-Cbe"; */
+"bjG-cL-Cbe.normalTitle" = "Over RSR";
+
+/* Class = "UILabel"; text = "0900-7788990"; ObjectID = "fdp-hX-Kn0"; */
+"fdp-hX-Kn0.text" = "0900-7788990";
+
+/* Class = "UINavigationItem"; title = "RSR Revalidatieservice"; ObjectID = "idC-WJ-bBy"; */
+"idC-WJ-bBy.title" = "RSR Revalidatieservice";
+
+/* Class = "UIBarButtonItem"; title = "About"; ObjectID = "kco-Kd-71A"; */
+"kco-Kd-71A.title" = "About";
+
+/* Class = "UILabel"; text = "Neem contact op met RSR Nederland "; ObjectID = "p8I-NI-yR6"; */
+"p8I-NI-yR6.text" = "Neem contact op met RSR Nederland ";
+
+/* Class = "UITextView"; text = "Met de hulp van RSR blijft u mobiel. RSR is dé leverancier van hulpmiddelen in de regio Noordoost-Nederland. Gedegen kennis en jarenlange ervaring zit in ons DNA verweven en leidt tot het beste advies.\\n\n      Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bezoek onze showrooms in Silvolde en Nieuwleusen. We zijn iedere werkdag geopend van 8.00 tot 17.00 uur. Hier kunt u diverse hulpmiddelen uitproberen en rustig bekijken wat goed bij uw situatie aansluit. Samen met u zoeken we naar hulpmiddelen dat bij u past. RSR maakt mensen mobiel."; ObjectID = "qi9-vb-lZd"; */
+"qi9-vb-lZd.text" = "Met de hulp van RSR blijft u mobiel. RSR is dé leverancier van hulpmiddelen in de regio Noordoost-Nederland. Gedegen kennis en jarenlange ervaring zit in ons DNA verweven en leidt tot het beste advies.\\n\n      Wilt u meer weten over onze producten en diensten, kijk dan op www.rsr.nl of bezoek onze showrooms in Silvolde en Nieuwleusen. We zijn iedere werkdag geopend van 8.00 tot 17.00 uur. Hier kunt u diverse hulpmiddelen uitproberen en rustig bekijken wat goed bij uw situatie aansluit. Samen met u zoeken we naar hulpmiddelen dat bij u past. RSR maakt mensen mobiel.";
+
+/* Class = "UIButton"; normalTitle = "Bel RSR nu"; ObjectID = "r2Z-0F-o7K"; */
+"r2Z-0F-o7K.normalTitle" = "Bel RSR nu";
+
+/* Class = "UILabel"; text = "Voor dit nummer betallt u uw gebruikelijke belkosten"; ObjectID = "yi5-Uw-NGs"; */
+"yi5-Uw-NGs.text" = "Voor dit nummer betallt u uw gebruikelijke belkosten";
+
+/* Class = "UIBarButtonItem"; title = "Terug"; ObjectID = "zFg-dE-IvF"; */
+"zFg-dE-IvF.title" = "Terug";

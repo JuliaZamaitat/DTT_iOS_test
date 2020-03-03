@@ -11,6 +11,7 @@ import UIKit
 class MainMenuViewController: UIViewController {
   
   @IBOutlet weak var backgroundImageView: UIImageView!
+  @IBOutlet weak var navigationBarItem: UINavigationItem!
   var sizeClass: UIUserInterfaceSizeClass?
   
   override func viewDidLoad() {
@@ -27,6 +28,7 @@ class MainMenuViewController: UIViewController {
     guard let navigationController = navigationController else { return }
     navigationController.navigationBar.setBackgroundImage(UIImage(named: "navig_bar_back.png")?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0 ,right: 0), resizingMode: .stretch), for: .default)
     navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    navigationBarItem.title = Localizable.MainMenu.welcomeTitle.localized
     if sizeClass == .regular {
       navigationItem.rightBarButtonItem = nil
     }

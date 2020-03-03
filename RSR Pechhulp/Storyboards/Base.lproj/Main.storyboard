@@ -122,6 +122,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImageView" destination="kft-Ov-BkR" id="vuJ-ff-hP6"/>
+                        <outlet property="navigationBarItem" destination="idC-WJ-bBy" id="Il5-KH-F5W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -263,6 +264,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="navigationBar" destination="49f-k8-Vio" id="AVo-xn-NId"/>
                         <outlet property="textView" destination="qi9-vb-lZd" id="nqe-uh-vfI"/>
                     </connections>
                 </viewController>
@@ -546,8 +548,13 @@
                         <outlet property="addressLabel" destination="eQf-ud-egS" id="o3X-Lf-LQN"/>
                         <outlet property="callNowView" destination="RA9-fp-0Cs" id="YSO-2Z-cRI"/>
                         <outlet property="cancelButton" destination="T8g-ab-wsO" id="NaZ-g4-xvV"/>
+                        <outlet property="descriptionLabel" destination="EMF-VD-0LH" id="Hvr-S1-gcI"/>
+                        <outlet property="descriptionTitle" destination="TTA-A4-eEa" id="udo-dh-JVT"/>
                         <outlet property="firstCallButton" destination="r2Z-0F-o7K" id="RbY-Nb-dt9"/>
+                        <outlet property="locationDescription" destination="4RI-8v-re3" id="knP-mb-LwY"/>
+                        <outlet property="locationTitle" destination="V7L-Xc-KLd" id="WdH-6P-hmU"/>
                         <outlet property="mapView" destination="del-2Q-4Lb" id="KDj-0e-epw"/>
+                        <outlet property="secondCallButton" destination="UaN-hP-jfT" id="dtw-DA-Ppk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEG-tB-ZHe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
