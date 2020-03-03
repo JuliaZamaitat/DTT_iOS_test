@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Network
 
 enum MapView {
   
@@ -30,7 +31,7 @@ enum MapView {
   enum Connection {
   
     struct Request {
-      var reachability: Reachability
+      var netStatus: NetStatus
     }
     
     struct Response {

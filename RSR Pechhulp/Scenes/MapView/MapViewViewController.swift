@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Network
 
 protocol MapViewViewControllerInput {
   func openPhoneDialog(viewModel: MapView.PhoneCall.ViewModel)
@@ -66,6 +67,7 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
     super.viewDidAppear(animated)
     setupLocationManager()
     checkInternetAccess()
+    monitorNetworkChanges()
   }
   
   func configureLocalizations(){
@@ -118,14 +120,23 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
 
 // MARK: - Connectivity
 
-extension MapViewViewController: Connectivity {
-  var reachability: Reachability {
-    Reachability.getInstance()
+extension MapViewViewController {
+ 
+  var netStatus: NetStatus {
+    NetStatus.shared
+  }
+  
+  func monitorNetworkChanges() {
+    NetStatus.shared.netStatusChangeHandler = {
+        DispatchQueue.main.async { [unowned self] in
+          self.checkInternetAccess()
+        }
+    }
   }
   
   // Checks for internet connenction and alerts when not connected.
   func checkInternetAccess() {
-    let request = MapView.Connection.Request(reachability: reachability)
+    let request = MapView.Connection.Request(netStatus: netStatus)
     output.checkInternetAccess(request)
   }
   
@@ -134,6 +145,7 @@ extension MapViewViewController: Connectivity {
       showAlert(title: "No Connection", message: "You are not connected to the internet. Please turn on your WiFi or mobile services.")
     }
   }
+  
 }
 
 

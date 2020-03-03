@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A327562B23F71F7A00DB6C1C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A327562A23F71F7A00DB6C1C /* Reachability.swift */; };
 		A332B19F23F82ED500C93BCC /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332B19E23F82ED500C93BCC /* CLLocationExtension.swift */; };
-		A3724B8423F82AD2007A12F8 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3724B8223F82816007A12F8 /* Connectivity.swift */; };
 		A392923823F82C0D002BB050 /* PhoneCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392923723F82C0D002BB050 /* PhoneCall.swift */; };
 		A3CDB77A240E56BF00912B9F /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB779240E56BF00912B9F /* MapViewViewController.swift */; };
 		A3CDB77C240E58FD00912B9F /* MapViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB77B240E58FD00912B9F /* MapViewModels.swift */; };
@@ -27,12 +25,11 @@
 		A3D3875023F59BA100BA2088 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3874F23F59BA100BA2088 /* MainMenuViewController.swift */; };
 		A3FD9805240ED35800A9D888 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD9804240ED35800A9D888 /* UIViewExtension.swift */; };
 		A3FD9809240ED53400A9D888 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD9808240ED53400A9D888 /* AlertManager.swift */; };
+		A3FD980B240EDEA800A9D888 /* NetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD980A240EDEA800A9D888 /* NetStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A327562A23F71F7A00DB6C1C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A332B19E23F82ED500C93BCC /* CLLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationExtension.swift; sourceTree = "<group>"; };
-		A3724B8223F82816007A12F8 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		A392923723F82C0D002BB050 /* PhoneCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCall.swift; sourceTree = "<group>"; };
 		A3CDB779240E56BF00912B9F /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
 		A3CDB77B240E58FD00912B9F /* MapViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModels.swift; sourceTree = "<group>"; };
@@ -55,6 +52,7 @@
 		A3D3874F23F59BA100BA2088 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		A3FD9804240ED35800A9D888 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A3FD9808240ED53400A9D888 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		A3FD980A240EDEA800A9D888 /* NetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +69,6 @@
 		A3611DF623F873FC002430C9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A3724B8223F82816007A12F8 /* Connectivity.swift */,
 				A392923723F82C0D002BB050 /* PhoneCall.swift */,
 				A3FD9808240ED53400A9D888 /* AlertManager.swift */,
 			);
@@ -171,7 +168,7 @@
 		A3D3875923F5DA9B00BA2088 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A327562A23F71F7A00DB6C1C /* Reachability.swift */,
+				A3FD980A240EDEA800A9D888 /* NetStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,8 +265,7 @@
 				A3D3873C23F58B8D00BA2088 /* AppDelegate.swift in Sources */,
 				A3CDB7A2240EC55000912B9F /* LocalizableDelegate.swift in Sources */,
 				A3CDB7A0240EC4A800912B9F /* Localizable.swift in Sources */,
-				A327562B23F71F7A00DB6C1C /* Reachability.swift in Sources */,
-				A3724B8423F82AD2007A12F8 /* Connectivity.swift in Sources */,
+				A3FD980B240EDEA800A9D888 /* NetStatus.swift in Sources */,
 				A3CDB77C240E58FD00912B9F /* MapViewModels.swift in Sources */,
 				A3CDB786240E5F1400912B9F /* MapViewConfigurator.swift in Sources */,
 				A3CDB789240EB6E500912B9F /* AboutPageViewController.swift in Sources */,
