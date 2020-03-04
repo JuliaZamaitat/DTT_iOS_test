@@ -31,7 +31,7 @@ enum MapView {
   enum Connection {
   
     struct Request {
-      var netStatus: NetStatus
+      var path: NWPath
     }
     
     struct Response {

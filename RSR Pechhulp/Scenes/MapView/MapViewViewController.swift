@@ -49,6 +49,9 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
 
   var output: MapViewViewControllerOutput!
   
+  let monitor = NWPathMonitor()
+
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     MapViewConfigurator.sharedInstance.configure(viewController: self)
@@ -61,13 +64,16 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
     addressAnnotation.isHidden = true
     callNowView.isHidden = true
     configureLocalizations()
+    configureNetworkHandler()
+    
+    
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     setupLocationManager()
-    checkInternetAccess()
-    monitorNetworkChanges()
+    //checkInternetAccess()
+    //monitorNetworkChanges()
   }
   
   func configureLocalizations(){
@@ -92,7 +98,7 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
     
     // Triggers the phone functionality of the phone and hides the confirmation view
     @IBAction func secondCallButtonPressed(_ sender: Any) {
-      let phoneNumber = "09007788990miau"
+      let phoneNumber = "09007788990"
       let request = MapView.PhoneCall.Request(phoneNumber: phoneNumber)
       output.makePhoneCall(request)
     }
@@ -122,22 +128,14 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
 
 extension MapViewViewController {
  
-  var netStatus: NetStatus {
-    NetStatus.shared
-  }
-  
-  func monitorNetworkChanges() {
-    NetStatus.shared.netStatusChangeHandler = {
-        DispatchQueue.main.async { [unowned self] in
-          self.checkInternetAccess()
-        }
+  func configureNetworkHandler() {
+    monitor.pathUpdateHandler = { path in
+          let request = MapView.Connection.Request(path: path)
+        self.output.checkInternetAccess(request)
+      
     }
-  }
-  
-  // Checks for internet connenction and alerts when not connected.
-  func checkInternetAccess() {
-    let request = MapView.Connection.Request(netStatus: netStatus)
-    output.checkInternetAccess(request)
+    let queue = DispatchQueue(label: "Monitor")
+    monitor.start(queue: queue)
   }
   
   func showConnectionAlert(viewModel: MapView.Connection.ViewModel) {

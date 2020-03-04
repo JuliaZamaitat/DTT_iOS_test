@@ -17,7 +17,7 @@ protocol MapViewInteractorInput {
   func geocodeLocation(_ request: MapView.Annotation.Request)
   func configureAnnotationView(_ request: MapView.MapView.Request) -> MKAnnotationView?
 }
- 
+
 protocol MapViewInteractorOutput{
   func presentPhoneCall(response: MapView.PhoneCall.Response)
   func presentAlert(response: MapView.Connection.Response)
@@ -25,40 +25,29 @@ protocol MapViewInteractorOutput{
   func presentLocation(response: MapView.Location.Response)
   func presentAddressAnnoation(response: MapView.Annotation.Response)
   func presentAnnotationView(response: MapView.MapView.Response)
- 
+  
 }
- 
+
 class MapViewInteractor: MapViewInteractorInput {
   var output: MapViewInteractorOutput!
- 
+  
   // MARK: Business logic
- 
+  
   func makePhoneCall(_ request: MapView.PhoneCall.Request) {
-    // NOTE: Create some Worker to do the work
- 
-//    worker = MapViewWorker()
-//    worker.doSomeWork()
-//
-    // NOTE: Pass the result to the Presenter
     if let phoneURL = NSURL(string: ("tel://" + request.phoneNumber)) {
       let response = MapView.PhoneCall.Response(phoneURL: phoneURL)
       output.presentPhoneCall(response: response)
     }
   }
   
+  
   func checkInternetAccess(_ request: MapView.Connection.Request) {
-    DispatchQueue.global().async {
-      if !request.netStatus.isMonitoring {
-        request.netStatus.startMonitoring()
-        print("was not monitoring")
-      }
+    if request.path.status == .satisfied {
+      print("We're connected!")
+    } else {
       DispatchQueue.main.async {
-        let connected = request.netStatus.isConnected
-        if !connected {
-          let response = MapView.Connection.Response(connected: connected)
-          self.output.presentAlert(response: response)
-          print("was not connected")
-        }
+        let response = MapView.Connection.Response(connected: false)
+        self.output.presentAlert(response: response)
       }
     }
   }
