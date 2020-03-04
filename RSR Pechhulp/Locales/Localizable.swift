@@ -10,14 +10,14 @@ import Foundation
 
 enum Localizable {
   
- enum MainMenu: String, LocalizableDelegate {
-   case welcomeTitle
-}
+  enum MainMenu: String, LocalizableDelegate {
+    case welcomeTitle
+  }
   
   enum AboutPage: String, LocalizableDelegate {
-   case title
-   case aboutTextPt1
-   case aboutTextPt2
+    case title
+    case aboutTextPt1
+    case aboutTextPt2
   }
   
   enum MapView: String, LocalizableDelegate {
@@ -28,9 +28,13 @@ enum Localizable {
     case costTitle
     case locationDescription
     case locationTitle
+    case noInternetConnection
+    case noInternetConnectionMessage
+    case gpsTurnedOff
+    case gpsTurnedOffMessage
+    case gpsDenied
+    case gpsDeniedMessage
+    case goToSettings
   }
-  
-  
-  
   
 }

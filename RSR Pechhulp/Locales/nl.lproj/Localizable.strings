@@ -36,4 +36,18 @@
 
 "locationTitle" = "Uw locatie:";
 
+"noInternetConnection" = "Geen connectie";
+
+"noInternetConnectionMessage" = "U bent niet verbonden met internet. Schakel uw WiFi of mobiele services in.";
+
 "locationDescription" = "Onthoud deze locatie voor het telefoongesprek";
+
+"gpsTurnedOff" = "GPS uitgeschakeld";
+
+"gpsTurnedOffMessage" = "GPS-toegang is beperkt. Schakel GPS in de app Instellingen onder Privacy, Locatieservices in om tracking te gebruiken.";
+
+"gpsDenied" = "GPS uitgeschakeld op apparaat";
+
+"gpsDeniedMessage" = "Uw GPS is uitgeschakeld op dit apparaat. Schakel dit in de app Instellingen onder Privacy, Locatieservices in." ;
+
+"goToSettings" = "Ga nu naar Instellingen";

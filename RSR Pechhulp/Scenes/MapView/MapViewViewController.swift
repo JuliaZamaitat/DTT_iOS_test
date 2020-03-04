@@ -38,10 +38,10 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
   @IBOutlet fileprivate weak var firstCallButton: UIButton!
   @IBOutlet fileprivate weak var cancelButton: UIButton!
   @IBOutlet fileprivate weak var secondCallButton: UIButton!
-  @IBOutlet weak var descriptionLabel: UILabel!
-  @IBOutlet weak var descriptionTitle: UILabel!
-  @IBOutlet weak var locationTitle: UILabel!
-  @IBOutlet weak var locationDescription: UILabel!
+  @IBOutlet fileprivate weak var descriptionLabel: UILabel!
+  @IBOutlet fileprivate weak var descriptionTitle: UILabel!
+  @IBOutlet fileprivate weak var locationTitle: UILabel!
+  @IBOutlet fileprivate weak var locationDescription: UILabel!
   
   fileprivate lazy var locationManager: CLLocationManager = {
     return CLLocationManager()
@@ -131,7 +131,7 @@ extension MapViewViewController {
   
   func showConnectionAlert(viewModel: MapView.Connection.ViewModel) {
     if !viewModel.connected {
-      showAlert(title: "No Connection", message: "You are not connected to the internet. Please turn on your WiFi or mobile services.")
+      showAlert(title: Localizable.MapView.noInternetConnection.localized, message: Localizable.MapView.noInternetConnectionMessage.localized)
     }
   }
   
@@ -208,9 +208,9 @@ extension MapViewViewController: CLLocationManagerDelegate {
   
   func showAuthorizationAlert(viewModel: MapView.Authorization.ViewModel) {
     if viewModel.authorizationStatus == "denied" {
-        showAlert(title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [openAppPrivacySettings()])
+      showAlert(title: Localizable.MapView.gpsTurnedOff.localized, message: Localizable.MapView.gpsTurnedOffMessage.localized, actions: [openAppPrivacySettings()])
       } else {
-        showAlert(title: "GPS disabled on Device", message: "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.")
+        showAlert(title: Localizable.MapView.gpsDenied.localized, message: Localizable.MapView.gpsDeniedMessage.localized)
       }
     
     
@@ -259,7 +259,7 @@ extension MapViewViewController: AlertManager {
   
   // Opens the privacy settings for localisation of the app on the device
   func openAppPrivacySettings() -> UIAlertAction {
-    let action = UIAlertAction(title: "Go to Settings now", style: .default, handler: { alert in
+    let action = UIAlertAction(title: Localizable.MapView.goToSettings.localized, style: .default, handler: { alert in
       guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
       UIApplication.shared.open(settingsUrl)
       self.dismiss(animated: true, completion: nil)

@@ -36,4 +36,19 @@
 
 "locationTitle" = "Your location:";
 
+"noInternetConnection" = "No Connection";
+
+"noInternetConnectionMessage" = "You are not connected to the internet. Please turn on your WiFi or mobile services.";"
+
 "locationDescription" = "Remember this location for the phone call";
+
+"gpsTurnedOff" = "GPS turned off";
+
+"gpsTurnedOffMessage" = "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.";
+
+"gpsDenied" = "GPS disabled on Device";
+
+"gpsDeniedMessage" = "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.";
+
+"goToSettings" = "Go to Settings now";
+
