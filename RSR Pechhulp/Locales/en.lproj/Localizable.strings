@@ -1,4 +1,5 @@
-/* 
+
+/*
   Localizable.strings
   RSR Pechhulp
 
@@ -38,7 +39,7 @@
 
 "noInternetConnection" = "No Connection";
 
-"noInternetConnectionMessage" = "You are not connected to the internet. Please turn on your WiFi or mobile services.";"
+"noInternetConnectionMessage" = "You are not connected to the internet. Please turn on your WiFi or mobile services.";
 
 "locationDescription" = "Remember this location for the phone call";
 
@@ -51,4 +52,3 @@
 "gpsDeniedMessage" = "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.";
 
 "goToSettings" = "Go to Settings now";
-

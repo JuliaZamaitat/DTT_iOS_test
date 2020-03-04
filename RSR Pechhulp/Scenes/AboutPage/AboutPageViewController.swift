@@ -9,19 +9,20 @@
 import UIKit
 
 class AboutPageViewController: UIViewController {
-
-    
-    @IBOutlet weak var textView: UITextView!
   
-    @IBOutlet weak var navigationBar: UINavigationItem!
   
-    override func viewDidLoad() {
-      super.viewDidLoad()
-      configureTextLabel()
-    }
-    
-    private func configureTextLabel() {
-      textView.text = Localizable.AboutPage.aboutTextPt1.localized + "\n\n" + Localizable.AboutPage.aboutTextPt2.localized
-      navigationBar.title = Localizable.AboutPage.title.localized
-    }
+  @IBOutlet weak var textView: UITextView!
+  
+  @IBOutlet weak var navigationBar: UINavigationItem!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureTextLabel()
+  }
+  
+  // configures the description tage with the localized text
+  private func configureTextLabel() {
+    textView.text = Localizable.AboutPage.aboutTextPt1.localized + "\n\n" + Localizable.AboutPage.aboutTextPt2.localized
+    navigationBar.title = Localizable.AboutPage.title.localized
+  }
 }

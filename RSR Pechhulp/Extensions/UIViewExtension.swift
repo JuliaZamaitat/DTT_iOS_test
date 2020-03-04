@@ -10,7 +10,11 @@ import UIKit
 
 public extension UIView {
   
-  // Makes a view (in)visible with a smooth animation
+  /**
+  Makes a view (in)visible with a smooth animation
+  
+  - Parameter hidden: A Bool indicating whether the view should be hidden or not
+  */
   func setView(hidden: Bool) {
     UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
        self.isHidden = hidden

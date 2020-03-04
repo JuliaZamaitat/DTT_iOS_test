@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A332B19F23F82ED500C93BCC /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332B19E23F82ED500C93BCC /* CLLocationExtension.swift */; };
-		A392923823F82C0D002BB050 /* PhoneCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392923723F82C0D002BB050 /* PhoneCall.swift */; };
 		A3CDB77A240E56BF00912B9F /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB779240E56BF00912B9F /* MapViewViewController.swift */; };
 		A3CDB77C240E58FD00912B9F /* MapViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB77B240E58FD00912B9F /* MapViewModels.swift */; };
 		A3CDB77E240E5B4A00912B9F /* MapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CDB77D240E5B4A00912B9F /* MapViewInteractor.swift */; };
@@ -29,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		A332B19E23F82ED500C93BCC /* CLLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationExtension.swift; sourceTree = "<group>"; };
-		A392923723F82C0D002BB050 /* PhoneCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCall.swift; sourceTree = "<group>"; };
 		A3CDB779240E56BF00912B9F /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
 		A3CDB77B240E58FD00912B9F /* MapViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModels.swift; sourceTree = "<group>"; };
 		A3CDB77D240E5B4A00912B9F /* MapViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInteractor.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 		A3611DF623F873FC002430C9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A392923723F82C0D002BB050 /* PhoneCall.swift */,
 				A3FD9808240ED53400A9D888 /* AlertManager.swift */,
 			);
 			path = Protocols;
@@ -251,7 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A392923823F82C0D002BB050 /* PhoneCall.swift in Sources */,
 				A3FD9809240ED53400A9D888 /* AlertManager.swift in Sources */,
 				A3CDB77E240E5B4A00912B9F /* MapViewInteractor.swift in Sources */,
 				A3CDB782240E5CBF00912B9F /* MapViewPresenter.swift in Sources */,

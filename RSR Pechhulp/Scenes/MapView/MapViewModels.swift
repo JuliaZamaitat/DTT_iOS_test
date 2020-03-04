@@ -13,7 +13,7 @@ import Network
 enum MapView {
   
   enum PhoneCall {
-  
+    
     struct Request {
       var phoneNumber: String
     }
@@ -27,9 +27,8 @@ enum MapView {
     }
   }
   
-  
   enum Connection {
-  
+    
     struct Request {
       var path: NWPath
     }
@@ -44,7 +43,7 @@ enum MapView {
   }
   
   enum Authorization {
-  
+    
     struct Request {
       var locationManager: CLLocationManager
     }
@@ -59,7 +58,7 @@ enum MapView {
   }
   
   enum Location {
-  
+    
     struct Request {
       var locations: [CLLocation]
     }
@@ -73,14 +72,12 @@ enum MapView {
       var userLocation: CLLocation
       var region: MKCoordinateRegion
     }
-    
-    
   }
   
   enum Annotation {
-  
+    
     struct Request {
-     var location: CLLocation
+      var location: CLLocation
     }
     
     struct Response {
@@ -93,10 +90,10 @@ enum MapView {
   }
   
   enum MapView {
-  
+    
     struct Request {
-     var mapView: MKMapView
-     var annotation: MKAnnotation
+      var mapView: MKMapView
+      var annotation: MKAnnotation
     }
     
     struct Response {
@@ -104,7 +101,7 @@ enum MapView {
     }
     
     struct ViewModel {
-       var annotationView: MKAnnotationView
+      var annotationView: MKAnnotationView
     }
   }
   
