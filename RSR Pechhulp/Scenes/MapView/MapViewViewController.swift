@@ -44,13 +44,12 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
   @IBOutlet weak var locationDescription: UILabel!
   
   fileprivate lazy var locationManager: CLLocationManager = {
-     return CLLocationManager()
-   }()
-
+    return CLLocationManager()
+  }()
+  
   var output: MapViewViewControllerOutput!
   
   let monitor = NWPathMonitor()
-
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -65,15 +64,8 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
     callNowView.isHidden = true
     configureLocalizations()
     configureNetworkHandler()
-    
-    
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
     setupLocationManager()
-    //checkInternetAccess()
-    //monitorNetworkChanges()
+    NotificationCenter.default.addObserver(self, selector: #selector(setupLocationManager), name: UIApplication.willEnterForegroundNotification, object: nil)
   }
   
   func configureLocalizations(){
@@ -86,53 +78,52 @@ class MapViewViewController: UIViewController, MapViewViewControllerInput {
     locationDescription.text = Localizable.MapView.locationDescription.localized
   }
 }
+
+// MARK: - Phone Call
+
+extension MapViewViewController {
   
-  // MARK: - Phone Call
+  // Triggers confirmation view for call and hides annotation view
+  @IBAction func firstCallButtonPressed(_ sender: Any) {
+    hideOrShowAddressAndCallButton()
+  }
   
-  extension MapViewViewController {
-    
-    // Triggers confirmation view for call and hides annotation view
-    @IBAction func firstCallButtonPressed(_ sender: Any) {
-      hideOrShowAddressAndCallButton()
-    }
-    
-    // Triggers the phone functionality of the phone and hides the confirmation view
-    @IBAction func secondCallButtonPressed(_ sender: Any) {
-      let phoneNumber = "09007788990"
-      let request = MapView.PhoneCall.Request(phoneNumber: phoneNumber)
-      output.makePhoneCall(request)
-    }
-    
-    // Hides confirmation view for call and presents annotation view
-    @IBAction func cancelButtonPressed(_ sender: Any) {
-      hideOrShowAddressAndCallButton()
-    }
-    
-    // Makes the call box, button and address annotation (in)visible depending on how the previous state was
-    func hideOrShowAddressAndCallButton(){
-      callNowView.setView(hidden: !callNowView.isHidden)
-      addressAnnotation.setView(hidden: !addressAnnotation.isHidden)
-      firstCallButton.setView(hidden: !firstCallButton.isHidden)
-    }
-    
-    
-    // Makes the call box, button and address annotation (in)visible depending on how the previous state was
-    func openPhoneDialog(viewModel: MapView.PhoneCall.ViewModel){
-      UIApplication.shared.open(viewModel.phoneURL, options: [:], completionHandler: nil)
-      hideOrShowAddressAndCallButton()
-    }
-    
+  // Triggers the phone functionality of the phone and hides the confirmation view
+  @IBAction func secondCallButtonPressed(_ sender: Any) {
+    let phoneNumber = "09007788990"
+    let request = MapView.PhoneCall.Request(phoneNumber: phoneNumber)
+    output.makePhoneCall(request)
+  }
+  
+  // Hides confirmation view for call and presents annotation view
+  @IBAction func cancelButtonPressed(_ sender: Any) {
+    hideOrShowAddressAndCallButton()
+  }
+  
+  // Makes the call box, button and address annotation (in)visible depending on how the previous state was
+  func hideOrShowAddressAndCallButton(){
+    callNowView.setView(hidden: !callNowView.isHidden)
+    addressAnnotation.setView(hidden: !addressAnnotation.isHidden)
+    firstCallButton.setView(hidden: !firstCallButton.isHidden)
+  }
+  
+  
+  // Makes the call box, button and address annotation (in)visible depending on how the previous state was
+  func openPhoneDialog(viewModel: MapView.PhoneCall.ViewModel){
+    UIApplication.shared.open(viewModel.phoneURL, options: [:], completionHandler: nil)
+    hideOrShowAddressAndCallButton()
+  }
+  
 }
 
 // MARK: - Connectivity
 
 extension MapViewViewController {
- 
+  
   func configureNetworkHandler() {
     monitor.pathUpdateHandler = { path in
-          let request = MapView.Connection.Request(path: path)
-        self.output.checkInternetAccess(request)
-      
+      let request = MapView.Connection.Request(path: path)
+      self.output.checkInternetAccess(request)
     }
     let queue = DispatchQueue(label: "Monitor")
     monitor.start(queue: queue)
@@ -152,13 +143,13 @@ extension MapViewViewController {
 extension MapViewViewController: CLLocationManagerDelegate {
   
   // Sets up the delegate for the CLLocationManager object, sets the accuracy of the location data and checks the users permission to localize the device.
-  func setupLocationManager() {
+  @objc func setupLocationManager() {
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    
     let request = MapView.Authorization.Request(locationManager: locationManager)
     output.checkAndAskForAuthorization(request)
   }
+
   
   // Gets called after location was updated significantally and sets the map region to the current position.
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -167,10 +158,10 @@ extension MapViewViewController: CLLocationManagerDelegate {
   }
   
   func showLocation(viewModel: MapView.Location.ViewModel) {
-     mapView.setRegion(viewModel.region, animated: true)
-     updateAddressAnnotation(forLocation: viewModel.userLocation)
-     drawLocationPin(at: viewModel.userLocation)
-   }
+    mapView.setRegion(viewModel.region, animated: true)
+    updateAddressAnnotation(forLocation: viewModel.userLocation)
+    drawLocationPin(at: viewModel.userLocation)
+  }
   
   // Adds the pin at the current location after it changed
   private func drawLocationPin(at location: CLLocation) {
@@ -191,7 +182,7 @@ extension MapViewViewController: CLLocationManagerDelegate {
     output.checkAndAskForAuthorization(request)
   }
   
- 
+  
   // Updates the label for the address in the annotation box by calling the geocode method of CLLocation
   private func updateAddressAnnotation(forLocation location: CLLocation) {
     let request = MapView.Annotation.Request(location: location)
@@ -214,15 +205,16 @@ extension MapViewViewController: CLLocationManagerDelegate {
     }
   }
   
-
+  
   func showAuthorizationAlert(viewModel: MapView.Authorization.ViewModel) {
     if viewModel.authorizationStatus == "denied" {
-      showAlert(title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [openAppPrivacySettings()])
-    } else {
-      showAlert(title: "GPS disabled on Device", message: "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.")
-    }
-  }
-  
+        showAlert(title: "GPS turned off", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings app under Privacy, Location Services.", actions: [openAppPrivacySettings()])
+      } else {
+        showAlert(title: "GPS disabled on Device", message: "Your GPS is disabled on this device. Please enable it in the Settings app under Privacy, Location Services.")
+      }
+    
+    
+}
 }
 
 // MARK: - MKMapViewDelegate
@@ -248,29 +240,33 @@ extension MapViewViewController: MKMapViewDelegate {
 }
 
 
+// MARK: - AlertManager
+
 extension MapViewViewController: AlertManager {
+  
   func showAlert(title: String, message: String, actions: [UIAlertAction] = []) {
-      let alert = UIAlertController(title:title, message: message, preferredStyle: .alert)
-      if !actions.isEmpty {
-        for action in actions {
-          alert.addAction(action)
-        }
-      } else {
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    let alert = UIAlertController(title:title, message: message, preferredStyle: .alert)
+    if !actions.isEmpty {
+      for action in actions {
+        alert.addAction(action)
       }
-      self.present(alert, animated: true, completion: nil)
+    } else {
+      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     }
-    
-   
-    // Opens the privacy settings for localisation of the app on the device
-   func openAppPrivacySettings() -> UIAlertAction {
-      let action = UIAlertAction(title: "Go to Settings now", style: .default, handler: { alert in
-        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
-        UIApplication.shared.open(settingsUrl)
-      }
-      )
-      return action
+    self.present(alert, animated: true, completion: nil)
+  }
+  
+  
+  // Opens the privacy settings for localisation of the app on the device
+  func openAppPrivacySettings() -> UIAlertAction {
+    let action = UIAlertAction(title: "Go to Settings now", style: .default, handler: { alert in
+      guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+      UIApplication.shared.open(settingsUrl)
+      self.dismiss(animated: true, completion: nil)
     }
+    )
+    return action
+  }
 }
 
 
